@@ -18,12 +18,15 @@ Ein leichtgewichtiges, portables Windows-Tool zur komfortablen Verwaltung und Au
 
 *Hinweis:* Da das Tool frisch entwickelt und nicht mit einem teuren Zertifikat signiert ist, kann beim ersten Start eine Windows-SmartScreen-Meldung erscheinen. Klicke einfach auf "Weitere Informationen" und "Trotzdem ausführen".
 
-<img width="1356" height="912" alt="makro" src="https://github.com/user-attachments/assets/ec05ae7a-e70d-4b1e-b885-6ec2877ea901" />
 
-<img width="1365" height="931" alt="sprachen" src="https://github.com/user-attachments/assets/c8eeb73f-cb57-4afa-b34c-
-  c1f232abd101" />
+<img width="1351" height="897" alt="makro" src="https://github.com/user-attachments/assets/9941cbbb-947f-415b-a40b-f7d666fe4b26" />
 
-  <img width="1365" height="919" alt="help" src="https://github.com/user-attachments/assets/68fd4757-2d24-4c7b-b773-c2f700878622" />
+
+<img width="1348" height="912" alt="sprachen" src="https://github.com/user-attachments/assets/54ae42a6-c163-41cf-8dfa-badc454ae07f" />
+
+
+<img width="1383" height="915" alt="themes" src="https://github.com/user-attachments/assets/6fc107ea-3453-4f8e-910f-a2c99e2ac1c2" />
+
+
   
-<img width="1383" height="915" alt="themes" src="https://github.com/user-attachments/assets/1289673c-fcd4-4240-9543-6cd243a9ff75" />
 
