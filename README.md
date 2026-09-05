@@ -1,6 +1,6 @@
 # CouchKeys
 
-Ein leichtgewichtiges, portables Windows-Tool zur komfortablen Verwaltung und Ausführung von Makros und Tastenbefehlen. Ideal zur Optimierung von Workflows und Mediensteuerung.
+Ein leichtgewichtiges, kostenloses portables Windows-Tool zur komfortablen Verwaltung und Ausführung von Makros und Tastenbefehlen. Ideal zur Optimierung von Workflows und Mediensteuerung.
 
 ## 🚀 Funktionen
 * **mit 15x Sprachen:**  Deutsch, English, Español, Français, Indonesian, Italiano, Português, Русский, Türkçe, العربية, 中文, 日本語, 한국어, বাংলা, हिन्दी.
