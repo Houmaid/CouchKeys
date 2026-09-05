@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="WindowTitle">Simple File Renamer Pro</sys:String>
+	<sys:String x:Key="DropAreaText">📁 ファイルまたはフォルダをここにドラッグ（またはクリックして選択）</sys:String>
+	<sys:String x:Key="QuickTasks">⚡ クイックタスク（テンプレート）:</sys:String>
+	<sys:String x:Key="BtnHelp">ヘルプ</sys:String>
+	<sys:String x:Key="BtnAuto">🔍 自動提案（スマート）</sys:String>
+	<sys:String x:Key="BtnClean">✨ 自動クリーンアップ</sys:String>
+	<sys:String x:Key="BtnSeries">📺 アニメ/ドラマのエピソード整理</sys:String>
+	<sys:String x:Key="BtnNumber">🔢 連番の割り当て</sys:String>
+	<sys:String x:Key="ModeSimple">シンプルモード</sys:String>
+	<sys:String x:Key="ModeRegex">エキスパートモード (Regex)</sys:String>
+	<sys:String x:Key="LblSearch">検索 / パターン:</sys:String>
+	<sys:String x:Key="PlcSearch">例: german web h264</sys:String>
+	<sys:String x:Key="LblReplace">新しい名前 / 置換:</sys:String>
+	<sys:String x:Key="PlcReplace">例: German 空白 空白</sys:String>
+	<sys:String x:Key="HintText">💡 ヒント: 複数の単語はスペースで区切ります。「leer」という単語を入力すると、該当の検索語が削除されます。</sys:String>
+	<sys:String x:Key="LblVars">変数を挿入:</sys:String>
+	<sys:String x:Key="ColStatus">ステータス</sys:String>
+	<sys:String x:Key="ColOriginal">元のファイル名</sys:String>
+	<sys:String x:Key="ColNew">新しいファイル名</sys:String>
+	<sys:String x:Key="BtnClear">🗑️ クリア</sys:String>
+	<sys:String x:Key="BtnUndo">↶ 元に戻す</sys:String>
+	<sys:String x:Key="BtnRedo">↷ やり直す</sys:String>
+	<sys:String x:Key="TxtFileCount">0 個のファイルを読み込みました</sys:String>
+	<sys:String x:Key="BtnApply">ファイル名を適用</sys:String>
+	<sys:String x:Key="StatusReady">準備完了</sys:String>
+	<sys:String x:Key="StatusChanged">変更あり</sys:String>
+	<sys:String x:Key="StatusEmptyName">ファイル名は空にできません</sys:String>
+	<sys:String x:Key="StatusInvalidChars">無効な文字が含まれています</sys:String>
+	<sys:String x:Key="StatusPathTooLong">パスが長すぎます (MAX_PATH)</sys:String>
+	<sys:String x:Key="StatusRegexError">無効な Regex パターンです</sys:String>
+	<sys:String x:Key="StatusRegexTimeout">Regex タイムアウト</sys:String>
+	<sys:String x:Key="StatusPatternError">パターンエラー</sys:String>
+	<sys:String x:Key="StatusFileNotFound">ファイルが見つかりません</sys:String>
+	<sys:String x:Key="StatusDirNotFound">ディレクトリが見つかりません</sys:String>
+	<sys:String x:Key="StatusAccessDenied">アクセスが拒否されました</sys:String>
+	<sys:String x:Key="StatusIOError">I/O エラー（ファイルがロックされています）</sys:String>
+	<sys:String x:Key="StatusUnknownError">予期しないエラー</sys:String>
+	<sys:String x:Key="HelpTooltip">ヘルプと説明を開く</sys:String>
+	<sys:String x:Key="OkButtonText">OK</sys:String>
+	<sys:String x:Key="SuccessRenameMessage">{1} 個中 {0} 個のファイル名の変更に成功しました！</sys:String>
+	<sys:String x:Key="ConfirmTitle">確認が必要です</sys:String>
+	<sys:String x:Key="NoChangesMessage">適用する変更はありません。</sys:String>
+	<sys:String x:Key="InfoTitle">情報</sys:String>
+	<sys:String x:Key="SuccessTitle">成功</sys:String>
+	<sys:String x:Key="TooltipTheme">テーマ切り替え</sys:String>
+	<sys:String x:Key="Language">日本語</sys:String>
+	<sys:String x:Key="HelpTitle">ヘルプ &amp; 使い方</sys:String>
+	<sys:String x:Key="HelpContent">使い方へようこそ！ここではツールの操作方法を説明できます。</sys:String>
+	<sys:String x:Key="CloseText">閉じる</sys:String>
+	<sys:String x:Key="BtnNeu">+ 新規</sys:String>
+	<sys:String x:Key="BtnLoeschen">削除</sys:String>
+	<sys:String x:Key="BtnSpeichern">💾 保存 / 実行</sys:String>
+	<sys:String x:Key="StrEinstellungen">設定 / エディタ</sys:String>
+	<sys:String x:Key="StrBesipiel">入力例:</sys:String>
+	<sys:String x:Key="StrListe">概要 / 一覧:</sys:String>
+    <sys:String x:Key="StrSprache">言語を選択</sys:String>
+    <sys:String x:Key="StrPayPalTitle">プロジェクトを支援</sys:String>
+    <sys:String x:Key="StrSupportProject">このプロジェクトを支援する</sys:String>
+    <sys:String x:Key="StrSupportSubtext">このアプリは完全に無料で使用できます。アプリを気に入っていただき、私の活動を応援していただける場合は、PayPalを通じた寄付が素晴らしい方法です。ありがとうございます！</sys:String>
+    <sys:String x:Key="StrOpenPayPal">PayPalで寄付する</sys:String>
+    <sys:String x:Key="BtnClose">閉じる</sys:String>
+    <sys:String x:Key="StrMakros">マイマクロ</sys:String>
+    <sys:String x:Key="StrImport">インポート</sys:String>
+    <sys:String x:Key="StrExport">エクスポート</sys:String>
+    <sys:String x:Key="StrLiveStatus">⚡ライブ ロー生入力ステータス</sys:String>
+    <sys:String x:Key="StrKeyLabel">キー:  </sys:String>
+    <sys:String x:Key="StrKeyNone">なし</sys:String>
+    <sys:String x:Key="StrPressKeyPrompt">入力デバイスのキーを押してください...</sys:String>
+    <sys:String x:Key="StrEditMacro">マクロの編集</sys:String>
+    <sys:String x:Key="StrNameLabel">名前:</sys:String>
+    <sys:String x:Key="StrNamePlaceholder">マクロ名を入力してください...</sys:String>
+    <sys:String x:Key="StrTriggerLabel">トリガー (ソファキーボード):</sys:String>
+    <sys:String x:Key="StrScanButton">🔍 キースキャン</sys:String>
+    <sys:String x:Key="StrActionLabel">アクション実行:</sys:String>
+    <sys:String x:Key="StrRunAppOption">アプリ / スクリプトの起動 (.exe, .bat)</sys:String>
+    <sys:String x:Key="StrBrowseButton">参照...</sys:String>
+    <sys:String x:Key="StrSendKeysOption">キーコンビネーション送信</sys:String>
+    <sys:String x:Key="StrSaveMacroButton">💾 マクロを保存</sys:String>
+    <sys:String x:Key="StrNeuMakro">新しいマクロ</sys:String>
+    <sys:String x:Key="StrKeineTaste">キーなし</sys:String>
+    <sys:String x:Key="StrTasteDrucken">キーを押してください...</sys:String>
+    <sys:String x:Key="bAutoStart0">Windowsと同時に起動を無効にする</sys:String>
+    <sys:String x:Key="bAutoStart1">Windowsと同時に起動を有効にする</sys:String>
+    <sys:String x:Key="MsgCouchDetected">✅ Couchデバイスを検出しました！ScanCode={0}</sys:String>
+    <sys:String x:Key="TitleSuccess">成功</sys:String>
+    <sys:String x:Key="MsgFileNotFound">ファイル '{0}' が見つかりませんでした。</sys:String>
+    <sys:String x:Key="TitleSecurityAbort">セキュリティ中断</sys:String>
+    <sys:String x:Key="MsgNoPermission">実行権限がありません（アプリケーションを管理者として実行してみてください）。</sys:String>
+    <sys:String x:Key="TitleAccessDenied">アクセス拒否</sys:String>
+    <sys:String x:Key="MsgMacroExecError">マクロ実行エラー: {0}</sys:String>
+    <sys:String x:Key="TitleError">エラー</sys:String>
+    <sys:String x:Key="MsgNoValidMacrosFound">ファイル内に有効なマクロが見つかりませんでした。</sys:String>
+    <sys:String x:Key="TitleHint">ヒント</sys:String>
+    <sys:String x:Key="MsgImportPrompt">{0}件のマクロが見つかりました。\n\nインポートしたマクロを既存のリストに追加しますか？\n\n[はい] = 既存のリストに追加\n[いいえ] = 既存のリストを置換\n[キャンセル] = インポートを中止</sys:String>
+    <sys:String x:Key="TitleImportMode">インポートモードの選択</sys:String>
+    <sys:String x:Key="MsgImportSuccess">✅ {0}件のマクロを正常にインポートしました！</sys:String>
+    <sys:String x:Key="MsgImportError">ファイルのインポートエラー: {0}</sys:String>
+    <sys:String x:Key="MsgNoMacrosToExport">エクスポートするマクロがありません。</sys:String>
+    <sys:String x:Key="MsgExportSuccess">✅ {0}件のマクロを正常にエクスポートしました！</sys:String>
+    <sys:String x:Key="MsgExportError">エクスポートエラー: {0}</sys:String>
+    <sys:String x:Key="MsgPleaseSelectMacro">マクロを選択してください！</sys:String>
+    <sys:String x:Key="MsgMacroSaved">✅ マクロが保存されました！</sys:String>
+    <sys:String x:Key="MsgSaveError">保存エラー: {0}</sys:String>
+    <sys:String x:Key="MsgAutostartError">自動起動の変更エラー: {0}</sys:String>
+    <sys:String x:Key="StrHelpTitle">ヘルプとドキュメント</sys:String>
+    <sys:String x:Key="StrHelpHeader">ヘルプセンター</sys:String>
+    <sys:String x:Key="StrHelpSubHeader">アプリケーションの使用方法に関する重要な情報と実践的な例をご覧ください。</sys:String>
+    <sys:String x:Key="StrHelpSection1Title">1. マクロの作成とキーの学習</sys:String>
+    <sys:String x:Key="StrHelpSection1Text" xml:space="preserve">• 左下の「+ 新規」をクリックしてコマンドを追加します。
+• スキャンモードを使用してキーを自動取り込みします。
+• マクロに名前を付けてコマンドを管理します。</sys:String>
+    <sys:String x:Key="StrHelpSection2Title">2. アプリの起動とウィンドウフォーカス</sys:String>
+    <sys:String x:Key="StrHelpSection2Text" xml:space="preserve">アプリのパスを入力するか、フォーカスコマンドを使用します：
+• Focus{Kodi} – Kodiを前面に表示します。
+• Focus{firefox} / Focus{Thunderbird} – ブラウザやメールに切り替えます。
+• Focus{explorer} – エクスプローラーを開きます。</sys:String>
+    <sys:String x:Key="StrHelpSection3Title">3. キーボードショートカットとメディア操作</sys:String>
+    <sys:String x:Key="StrHelpSection3Text" xml:space="preserve">PCのリモコンとしてキーボードを使用します：
+• %{TAB} – 高速タスク切り替え (Alt+Tab)。
+• {SPACE} – 再生/一時停止 (スペース)。
+• %{F4} – アクティブウィンドウを閉じる (Alt+F4)。</sys:String>
+    <sys:String x:Key="StrHelpSection4Title">4. 外観と言語の変更</sys:String>
+    <sys:String x:Key="StrHelpSection4Text" xml:space="preserve">右上からテーマをカスタマイズできます。 
+メニューからいつでも言語を自由に変更可能です。</sys:String>
+    <sys:String x:Key="StrHelpSection5Title">5. セキュリティ・バックアップ・自動起動</sys:String>
+    <sys:String x:Key="StrHelpSection5Text" xml:space="preserve">JSONファイルとしてマクロをバックアップします。 
+タイトルバーの稲妻アイコンでWindows自動起動を有効にします。</sys:String>
+</ResourceDictionary>

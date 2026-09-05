@@ -1,0 +1,136 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="WindowTitle">Simple File Renamer Pro</sys:String>
+	<sys:String x:Key="DropAreaText">📁 Dateien oder Ordner hierhin ziehen (oder klicken zum Auswählen)</sys:String>
+	<sys:String x:Key="QuickTasks">⚡ Häufige Aufgaben (Schnellvorlagen):</sys:String>
+	<sys:String x:Key="BtnHelp">Hilfe</sys:String>
+	<sys:String x:Key="BtnAuto">🔍 Automatischer Vorschlag (Intelligent)</sys:String>
+	<sys:String x:Key="BtnClean">✨ Automatisch aufräumen</sys:String>
+	<sys:String x:Key="BtnSeries">📺 Serien-Folgen säubern</sys:String>
+	<sys:String x:Key="BtnNumber">🔢 Durchnummerieren</sys:String>
+	<sys:String x:Key="ModeSimple">Einfacher Modus</sys:String>
+	<sys:String x:Key="ModeRegex">Experten-Modus (Regex)</sys:String>
+	<sys:String x:Key="LblSearch">Suchen / Muster:</sys:String>
+	<sys:String x:Key="PlcSearch">z. B. german web h264</sys:String>
+	<sys:String x:Key="LblReplace">Neuer Name / Ersetzen:</sys:String>
+	<sys:String x:Key="PlcReplace">z. B. German leer leer</sys:String>
+	<sys:String x:Key="HintText">💡 Tipp: Mehrere Wörter mit Leerzeichen trennen. Das Wort „leer“ löscht den jeweiligen Suchbegriff.</sys:String>
+	<sys:String x:Key="LblVars">Variablen einfügen:</sys:String>
+	<sys:String x:Key="ColStatus">Status</sys:String>
+	<sys:String x:Key="ColOriginal">Originaler Dateiname</sys:String>
+	<sys:String x:Key="ColNew">Neuer Dateiname</sys:String>
+	<sys:String x:Key="BtnClear">🗑️ Leeren</sys:String>
+	<sys:String x:Key="BtnUndo">↶ Rückgängig</sys:String>
+	<sys:String x:Key="BtnRedo">↷ Wiederherstellen</sys:String>
+	<sys:String x:Key="TxtFileCount">0 Dateien geladen</sys:String>
+	<sys:String x:Key="BtnApply">Dateinamen anwenden</sys:String>
+	<sys:String x:Key="StatusReady">Bereit</sys:String>
+	<sys:String x:Key="StatusChanged">Geändert</sys:String>
+	<sys:String x:Key="StatusEmptyName">Name darf nicht leer sein</sys:String>
+	<sys:String x:Key="StatusInvalidChars">Ungültige Zeichen</sys:String>
+	<sys:String x:Key="StatusPathTooLong">Pfad zu lang (MAX_PATH)</sys:String>
+	<sys:String x:Key="StatusRegexError">Ungültiges Regex-Muster</sys:String>
+	<sys:String x:Key="StatusRegexTimeout">Regex-Timeout</sys:String>
+	<sys:String x:Key="StatusPatternError">Muster-Fehler</sys:String>
+	<sys:String x:Key="StatusFileNotFound">Datei nicht gefunden</sys:String>
+	<sys:String x:Key="StatusDirNotFound">Verzeichnis nicht gefunden</sys:String>
+	<sys:String x:Key="StatusAccessDenied">Zugriff verweigert</sys:String>
+	<sys:String x:Key="StatusIOError">E/A-Fehler (Datei gesperrt)</sys:String>
+	<sys:String x:Key="StatusUnknownError">Unerwarteter Fehler</sys:String>
+	<sys:String x:Key="HelpTooltip">Hilfe &amp; Anleitung öffnen</sys:String>
+	<sys:String x:Key="OkButtonText">OK</sys:String>
+	<sys:String x:Key="SuccessRenameMessage">{0} von {1} Dateien erfolgreich umbenannt!</sys:String>
+	<sys:String x:Key="ConfirmTitle">Bestätigung erforderlich</sys:String>
+	<sys:String x:Key="NoChangesMessage">Keine Änderungen zum Anwenden vorhanden.</sys:String>
+	<sys:String x:Key="InfoTitle">Hinweis</sys:String>
+	<sys:String x:Key="SuccessTitle">Erfolg</sys:String>
+    <sys:String x:Key="TooltipTheme">Farbschema wechseln</sys:String>
+    <sys:String x:Key="Language">Deutsch</sys:String>
+    <sys:String x:Key="HelpTitle">Hilfe &amp; Anleitung</sys:String>
+    <sys:String x:Key="HelpContent">Willkommen in der Anleitung! Hier kannst du erklären, wie das Tool bedient wird.</sys:String>
+    <sys:String x:Key="CloseText">Schließen</sys:String>
+    <sys:String x:Key="BtnNeu">+ Neu</sys:String>
+    <sys:String x:Key="BtnLoeschen">Löschen</sys:String>
+    <sys:String x:Key="BtnSpeichern">💾 Speichern / Ausführen</sys:String>
+    <sys:String x:Key="StrEinstellungen">Einstellungen / Editor</sys:String>
+    <sys:String x:Key="StrBesipiel">Beispiel-Eingabe:</sys:String>
+    <sys:String x:Key="StrListe">Übersicht / Liste:</sys:String>
+    <sys:String x:Key="StrSprache">Sprache Wählen</sys:String>
+    <sys:String x:Key="StrPayPalTitle">Projekt unterstützen</sys:String>
+    <sys:String x:Key="StrSupportProject">Unterstütze dieses Projekt</sys:String>
+    <sys:String x:Key="StrSupportSubtext">Die Nutzung dieser App ist komplett kostenlos, Wenn dir die App gefällt und du meine Arbeit unterstützen möchtest, ist eine Spende über PayPal eine tolle Möglichkeit dazu. Danke!</sys:String>
+    <sys:String x:Key="StrOpenPayPal">Auf PayPal spenden</sys:String>
+    <sys:String x:Key="BtnClose">Schließen</sys:String>
+    <sys:String x:Key="StrMakros">Meine Makros</sys:String>
+    <sys:String x:Key="StrImport">Import</sys:String>
+    <sys:String x:Key="StrExport">Export</sys:String>
+    <sys:String x:Key="StrLiveStatus">⚡ Live Raw-Input Status</sys:String>
+    <sys:String x:Key="StrKeyLabel">  Taste:  </sys:String>
+    <sys:String x:Key="StrKeyNone">Keine   </sys:String>
+    <sys:String x:Key="StrPressKeyPrompt">Drücke eine Taste auf einem Eingabegerät...</sys:String>
+    <sys:String x:Key="StrEditMacro">Makro bearbeiten</sys:String>
+    <sys:String x:Key="StrNameLabel">Name:</sys:String>
+    <sys:String x:Key="StrNamePlaceholder">Bitte Makro-Namen eingeben...</sys:String>
+    <sys:String x:Key="StrTriggerLabel">Trigger (Couch-Tastatur):</sys:String>
+    <sys:String x:Key="StrScanButton">🔍 Taste Scannen</sys:String>
+    <sys:String x:Key="StrActionLabel">Aktion ausführen:</sys:String>
+    <sys:String x:Key="StrRunAppOption">Programm / Skript starten (.exe, .bat)</sys:String>
+    <sys:String x:Key="StrBrowseButton">Durchsuchen...</sys:String>
+    <sys:String x:Key="StrSendKeysOption">Tastenkombination senden</sys:String>
+    <sys:String x:Key="StrSaveMacroButton">💾 Makro Speichern</sys:String>
+    <sys:String x:Key="StrNeuMakro">Neues Makro</sys:String>
+    <sys:String x:Key="StrKeineTaste">Keine Taste</sys:String>
+    <sys:String x:Key="StrTasteDrucken">Drücke Taste...</sys:String>
+    <sys:String x:Key="bAutoStart0">Mit Windows starten deaktivieren</sys:String>
+    <sys:String x:Key="bAutoStart1">Mit Windows starten aktivieren</sys:String>
+    <sys:String x:Key="MsgCouchDetected">✅ Couch-Gerät erfasst! ScanCode={0}</sys:String>
+    <sys:String x:Key="TitleSuccess">Erfolg</sys:String>
+    <sys:String x:Key="MsgFileNotFound">Die Datei '{0}' wurde nicht gefunden.</sys:String>
+    <sys:String x:Key="TitleSecurityAbort">Sicherheitsabbruch</sys:String>
+    <sys:String x:Key="MsgNoPermission">Keine Berechtigung zur Ausführung (Anwendung evtl. als Administrator ausführen).</sys:String>
+    <sys:String x:Key="TitleAccessDenied">Zugriff verweigert</sys:String>
+    <sys:String x:Key="MsgMacroExecError">Fehler bei Makroausführung: {0}</sys:String>
+    <sys:String x:Key="TitleError">Fehler</sys:String>
+    <sys:String x:Key="MsgNoValidMacrosFound">Keine gültigen Makros in der Datei gefunden.</sys:String>
+    <sys:String x:Key="TitleHint">Hinweis</sys:String>
+    <sys:String x:Key="MsgImportPrompt">Es wurden {0} Makros gefunden.\n\nMöchtest du die importierten Makros zur bestehenden Liste HINZUFÜGEN?\n\n[Ja] = An bestehende Liste anhängen\n[Nein] = Bestehende Liste ERSETZEN\n[Abbrechen] = Import abbrechen</sys:String>
+    <sys:String x:Key="TitleImportMode">Import-Modus wählen</sys:String>
+    <sys:String x:Key="MsgImportSuccess">✅ {0} Makro(s) erfolgreich importiert!</sys:String>
+    <sys:String x:Key="MsgImportError">Fehler beim Importieren der Datei: {0}</sys:String>
+    <sys:String x:Key="MsgNoMacrosToExport">Es sind keine Makros zum Exportieren vorhanden.</sys:String>
+    <sys:String x:Key="MsgExportSuccess">✅ {0} Makro(s) erfolgreich exportiert!</sys:String>
+    <sys:String x:Key="MsgExportError">Fehler beim Exportieren: {0}</sys:String>
+    <sys:String x:Key="MsgPleaseSelectMacro">Bitte Makro auswählen!</sys:String>
+    <sys:String x:Key="MsgMacroSaved">✅ Makro gespeichert!</sys:String>
+    <sys:String x:Key="MsgSaveError">Fehler beim Speichern: {0}</sys:String>
+    <sys:String x:Key="MsgAutostartError">Fehler beim Ändern des Autostarts: {0}</sys:String>
+    <sys:String x:Key="StrHelpTitle">Hilfe &amp; Dokumentation</sys:String>
+    <sys:String x:Key="StrHelpHeader">Hilfe-Center</sys:String>
+    <sys:String x:Key="StrHelpSubHeader">Hier findest du wichtige Informationen und praktische Beispiele zur Nutzung der Anwendung.</sys:String>
+
+    <sys:String x:Key="StrHelpSection1Title">1. Makro erstellen &amp; Tasten anlernen</sys:String>
+    <sys:String x:Key="StrHelpSection1Text" xml:space="preserve">• Klicke unten links auf „+ Neu“, um einen neuen Befehl hinzuzufügen.
+• Nutze den Scan-Modus, um Tasten deiner Couch-Tastatur automatisch einzulesen.
+• Weise dem Makro einen Namen zu und verwalte bestehende Befehle über die Auswahlliste.</sys:String>
+
+    <sys:String x:Key="StrHelpSection2Title">2. Apps öffnen &amp; im Hintergrund finden (Fokus)</sys:String>
+    <sys:String x:Key="StrHelpSection2Text" xml:space="preserve">Trage den Pfad zu einer Anwendung ein oder nutze intelligente Fokus-Befehle, um bestehende Fenster in den Vordergrund zu holen, statt sie doppelt zu öffnen.
+• Focus{Kodi} – Holt Kodi direkt auf den Bildschirm.
+• Focus{firefox} / Focus{Thunderbird} – Schaltet auf Browser oder E-Mail um.
+• Focus{explorer} – Öffnet den Windows-Explorer.</sys:String>
+
+    <sys:String x:Key="StrHelpSection3Title">3. Tastenkombinationen &amp; Medien steuern</sys:String>
+    <sys:String x:Key="StrHelpSection3Text" xml:space="preserve">Nutze deine Tastatur wie eine Fernbedienung für den PC:
+• %{TAB} – Blitzschneller Task-Wechsel (Alt+Tab).
+• {SPACE} – Startet oder pausiert Medien (Leertaste).
+• %{F4} – Schließt das aktuelle Fenster sofort (Alt+F4).</sys:String>
+
+    <sys:String x:Key="StrHelpSection4Title">4. Aussehen &amp; Sprache anpassen</sys:String>
+    <sys:String x:Key="StrHelpSection4Text" xml:space="preserve">Passe das Design (Themes) oben rechts an – perfekt fürs Heimkino oder passend zum Windows-Systemmodus. 
+Auch die Sprache der Benutzeroberfläche lässt sich jederzeit flexibel im Menü ändern.</sys:String>
+
+    <sys:String x:Key="StrHelpSection5Title">5. Sicherheit, Backup &amp; Autostart</sys:String>
+    <sys:String x:Key="StrHelpSection5Text" xml:space="preserve">Sichere deine Makros als JSON-Datei über die Export-Funktion oder spiele Backups ein. 
+Aktiviere das Blitz-Symbol in der Titelleiste für den Windows-Autostart, damit die App unauffällig im Hintergrund als Tray-Icon läuft.</sys:String>
+</ResourceDictionary>

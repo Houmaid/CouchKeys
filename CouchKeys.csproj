@@ -1,0 +1,200 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <RootNamespace>CouchKeys</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>couchkeys.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\ar.png" />
+    <None Remove="Assets\bg.png" />
+    <None Remove="Assets\ch.png" />
+    <None Remove="Assets\couchkeys.ico" />
+    <None Remove="Assets\de.png" />
+    <None Remove="Assets\en.png" />
+    <None Remove="Assets\es.png" />
+    <None Remove="Assets\fr.png" />
+    <None Remove="Assets\id.png" />
+    <None Remove="Assets\in.png" />
+    <None Remove="Assets\it.png" />
+    <None Remove="Assets\jp.png" />
+    <None Remove="Assets\pr.png" />
+    <None Remove="Assets\rs.png" />
+    <None Remove="Assets\tr.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Languages\Strings.ar.xaml" />
+    <Page Remove="Languages\Strings.bg.xaml" />
+    <Page Remove="Languages\Strings.ch.xaml" />
+    <Page Remove="Languages\Strings.de.xaml" />
+    <Page Remove="Languages\Strings.en.xaml" />
+    <Page Remove="Languages\Strings.es.xaml" />
+    <Page Remove="Languages\Strings.fr.xaml" />
+    <Page Remove="Languages\Strings.id.xaml" />
+    <Page Remove="Languages\Strings.in.xaml" />
+    <Page Remove="Languages\Strings.it.xaml" />
+    <Page Remove="Languages\Strings.jp.xaml" />
+    <Page Remove="Languages\Strings.ko.xaml" />
+    <Page Remove="Languages\Strings.pr.xaml" />
+    <Page Remove="Languages\Strings.rs.xaml" />
+    <Page Remove="Languages\Strings.tr.xaml" />
+    <Page Remove="Themes\ThemeAmber.xaml" />
+    <Page Remove="Themes\ThemeDark.xaml" />
+    <Page Remove="Themes\ThemeDracula.xaml" />
+    <Page Remove="Themes\ThemeEmerald.xaml" />
+    <Page Remove="Themes\ThemeGruvbox.xaml" />
+    <Page Remove="Themes\ThemeHighContrastDark.xaml" />
+    <Page Remove="Themes\ThemeHighContrastLight.xaml" />
+    <Page Remove="Themes\ThemeLight.xaml" />
+    <Page Remove="Themes\ThemeMonokai.xaml" />
+    <Page Remove="Themes\ThemeNord.xaml" />
+    <Page Remove="Themes\ThemePurple.xaml" />
+    <Page Remove="Themes\ThemeRoseGold.xaml" />
+    <Page Remove="Themes\ThemeSolarizedDark.xaml" />
+    <Page Remove="Themes\ThemeSolarizedLight.xaml" />
+    <Page Remove="Themes\ThemeSystem.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="couchkeys.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\couchkeys.ico" />
+    <Resource Include="Languages\Strings.tr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\ar.png" />
+    <Resource Include="Assets\bg.png" />
+    <Resource Include="Assets\ch.png" />
+    <Resource Include="Assets\de.png" />
+    <Resource Include="Assets\en.png" />
+    <Resource Include="Assets\es.png" />
+    <Resource Include="Assets\fr.png" />
+    <Resource Include="Assets\id.png" />
+    <Resource Include="Assets\in.png" />
+    <Resource Include="Assets\it.png" />
+    <Resource Include="Assets\jp.png" />
+    <Resource Include="Assets\pr.png" />
+    <Resource Include="Assets\rs.png" />
+    <Resource Include="Assets\ko.png" />
+    <Resource Include="Assets\tr.png" />
+    <Resource Include="Languages\Strings.ar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.bg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.ch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.de.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.es.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.fr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.id.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.in.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.it.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.jp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.ko.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.pr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Languages\Strings.rs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeAmber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeDracula.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeEmerald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeGruvbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeHighContrastDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeHighContrastLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeMonokai.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeNord.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemePurple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeRoseGold.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeSolarizedDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeSolarizedLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Themes\ThemeSystem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

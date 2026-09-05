@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="WindowTitle">Simple File Renamer Pro</sys:String>
+	<sys:String x:Key="DropAreaText">📁 Перетащите файлы или папки сюда (или нажмите для выбора)</sys:String>
+	<sys:String x:Key="QuickTasks">⚡ Быстрые задачи (шаблоны):</sys:String>
+	<sys:String x:Key="BtnHelp">Помощь</sys:String>
+	<sys:String x:Key="BtnAuto">🔍 Автоматический подбор (Умный)</sys:String>
+	<sys:String x:Key="BtnClean">✨ Автоматическая очистка</sys:String>
+	<sys:String x:Key="BtnSeries">📺 Очистка названий серий</sys:String>
+	<sys:String x:Key="BtnNumber">🔢 Нумерация по порядку</sys:String>
+	<sys:String x:Key="ModeSimple">Простой режим</sys:String>
+	<sys:String x:Key="ModeRegex">Режим эксперта (Regex)</sys:String>
+	<sys:String x:Key="LblSearch">Найти / Шаблон:</sys:String>
+	<sys:String x:Key="PlcSearch">напр.: german web h264</sys:String>
+	<sys:String x:Key="LblReplace">Новое имя / Заменить:</sys:String>
+	<sys:String x:Key="PlcReplace">напр.: German пусто пусто</sys:String>
+	<sys:String x:Key="HintText">💡 Совет: Разделяйте слова пробелами. Слово «leer» удаляет соответствующий поисковый запрос.</sys:String>
+	<sys:String x:Key="LblVars">Вставить переменные:</sys:String>
+	<sys:String x:Key="ColStatus">Статус</sys:String>
+	<sys:String x:Key="ColOriginal">Исходное имя файла</sys:String>
+	<sys:String x:Key="ColNew">Новое имя файла</sys:String>
+	<sys:String x:Key="BtnClear">🗑️ Очистить</sys:String>
+	<sys:String x:Key="BtnUndo">↶ Отменить</sys:String>
+	<sys:String x:Key="BtnRedo">↷ Повторить</sys:String>
+	<sys:String x:Key="TxtFileCount">Загружено файлов: 0</sys:String>
+	<sys:String x:Key="BtnApply">Применить имена файлов</sys:String>
+	<sys:String x:Key="StatusReady">Готово</sys:String>
+	<sys:String x:Key="StatusChanged">Изменено</sys:String>
+	<sys:String x:Key="StatusEmptyName">Имя не может быть пустым</sys:String>
+	<sys:String x:Key="StatusInvalidChars">Недопустимые символы</sys:String>
+	<sys:String x:Key="StatusPathTooLong">Слишком длинный путь (MAX_PATH)</sys:String>
+	<sys:String x:Key="StatusRegexError">Недопустимый шаблон Regex</sys:String>
+	<sys:String x:Key="StatusRegexTimeout">Время ожидания Regex истекло</sys:String>
+	<sys:String x:Key="StatusPatternError">Ошибка шаблона</sys:String>
+	<sys:String x:Key="StatusFileNotFound">Файл не найден</sys:String>
+	<sys:String x:Key="StatusDirNotFound">Папка не найдена</sys:String>
+	<sys:String x:Key="StatusAccessDenied">Доступ запрещен</sys:String>
+	<sys:String x:Key="StatusIOError">Ошибка ввода-вывода (Файл заблокирован)</sys:String>
+	<sys:String x:Key="StatusUnknownError">Непредвиденная ошибка</sys:String>
+	<sys:String x:Key="HelpTooltip">Открыть справку и инструкцию</sys:String>
+	<sys:String x:Key="OkButtonText">ОК</sys:String>
+	<sys:String x:Key="SuccessRenameMessage">Успешно переименовано файлов: {0} из {1}!</sys:String>
+	<sys:String x:Key="ConfirmTitle">Требуется подтверждение</sys:String>
+	<sys:String x:Key="NoChangesMessage">Нет изменений для применения.</sys:String>
+	<sys:String x:Key="InfoTitle">Примечание</sys:String>
+	<sys:String x:Key="SuccessTitle">Успешно</sys:String>
+	<sys:String x:Key="TooltipTheme">Сменить цветовую схему</sys:String>
+	<sys:String x:Key="Language">Русский</sys:String>
+	<sys:String x:Key="HelpTitle">Справка и инструкция</sys:String>
+	<sys:String x:Key="HelpContent">Добро пожаловать в справку! Здесь можно описать, как использовать программу.</sys:String>
+	<sys:String x:Key="CloseText">Закрыть</sys:String>
+	<sys:String x:Key="BtnNeu">+ Новый</sys:String>
+	<sys:String x:Key="BtnLoeschen">Удалить</sys:String>
+	<sys:String x:Key="BtnSpeichern">💾 Сохранить / Выполнить</sys:String>
+	<sys:String x:Key="StrEinstellungen">Настройки / Редактор</sys:String>
+	<sys:String x:Key="StrBesipiel">Пример ввода:</sys:String>
+	<sys:String x:Key="StrListe">Обзор / Список:</sys:String>
+    <sys:String x:Key="StrSprache">Выберите язык</sys:String>
+    <sys:String x:Key="StrPayPalTitle">Поддержать проект</sys:String>
+    <sys:String x:Key="StrSupportProject">Поддержите этот проект</sys:String>
+    <sys:String x:Key="StrSupportSubtext">Использование этого приложения полностью бесплатно. Если вам нравится приложение и вы хотите поддержать мою работу, пожертвование через PayPal — отличный способ сделать это. Спасибо!</sys:String>
+    <sys:String x:Key="StrOpenPayPal">Пожертвовать через PayPal</sys:String>
+    <sys:String x:Key="BtnClose">Закрыть</sys:String>
+    <sys:String x:Key="StrMakros">Мои макросы</sys:String>
+    <sys:String x:Key="StrImport">Импорт</sys:String>
+    <sys:String x:Key="StrExport">Экспорт</sys:String>
+    <sys:String x:Key="StrLiveStatus">⚡Статус сырого ввода (Live)</sys:String>
+    <sys:String x:Key="StrKeyLabel">Клавиша:  </sys:String>
+    <sys:String x:Key="StrKeyNone">Нет</sys:String>
+    <sys:String x:Key="StrPressKeyPrompt">Нажмите клавишу на устройстве ввода...</sys:String>
+    <sys:String x:Key="StrEditMacro">Редактировать макрос</sys:String>
+    <sys:String x:Key="StrNameLabel">Имя:</sys:String>
+    <sys:String x:Key="StrNamePlaceholder">Введите имя макроса...</sys:String>
+    <sys:String x:Key="StrTriggerLabel">Триггер (Диванная клавиатура):</sys:String>
+    <sys:String x:Key="StrScanButton">🔍 Сканировать клавишу</sys:String>
+    <sys:String x:Key="StrActionLabel">Выполнить действие:</sys:String>
+    <sys:String x:Key="StrRunAppOption">Запустить приложение / скрипт (.exe, .bat)</sys:String>
+    <sys:String x:Key="StrBrowseButton">Обзор...</sys:String>
+    <sys:String x:Key="StrSendKeysOption">Отправить комбинацию клавиш</sys:String>
+    <sys:String x:Key="StrSaveMacroButton">💾 Сохранить макрос</sys:String>
+    <sys:String x:Key="StrNeuMakro">Новый макрос</sys:String>
+    <sys:String x:Key="StrKeineTaste">Нет клавиши</sys:String>
+    <sys:String x:Key="StrTasteDrucken">Нажмите клавишу...</sys:String>
+    <sys:String x:Key="bAutoStart0">Отключить запуск с Windows</sys:String>
+    <sys:String x:Key="bAutoStart1">Включить запуск с Windows</sys:String>
+    <sys:String x:Key="MsgCouchDetected">✅ Устройство Couch обнаружено! ScanCode={0}</sys:String>
+    <sys:String x:Key="TitleSuccess">Успех</sys:String>
+    <sys:String x:Key="MsgFileNotFound">Файл '{0}' не найден.</sys:String>
+    <sys:String x:Key="TitleSecurityAbort">Прерывание безопасности</sys:String>
+    <sys:String x:Key="MsgNoPermission">Нет прав на выполнение (попробуйте запустить приложение от имени администратора).</sys:String>
+    <sys:String x:Key="TitleAccessDenied">Доступ запрещен</sys:String>
+    <sys:String x:Key="MsgMacroExecError">Ошибка выполнения макроса: {0}</sys:String>
+    <sys:String x:Key="TitleError">Ошибка</sys:String>
+    <sys:String x:Key="MsgNoValidMacrosFound">В файле не найдено действительных макросов.</sys:String>
+    <sys:String x:Key="TitleHint">Уведомление</sys:String>
+    <sys:String x:Key="MsgImportPrompt">Найдено макросов: {0}.\n\nХотите ДОБАВИТЬ импортированные макросы к существующему списку?\n\n[Да] = Добавить к существующему списку\n[Нет] = ЗАМЕНИТЬ существующий список\n[Отмена] = Отменить импорт</sys:String>
+    <sys:String x:Key="TitleImportMode">Выберите режим импорта</sys:String>
+    <sys:String x:Key="MsgImportSuccess">✅ Успешно импортировано макросов: {0}!</sys:String>
+    <sys:String x:Key="MsgImportError">Ошибка импорта файла: {0}</sys:String>
+    <sys:String x:Key="MsgNoMacrosToExport">Нет макросов для экспорта.</sys:String>
+    <sys:String x:Key="MsgExportSuccess">✅ Успешно экспортировано макросов: {0}!</sys:String>
+    <sys:String x:Key="MsgExportError">Ошибка экспорта: {0}</sys:String>
+    <sys:String x:Key="MsgPleaseSelectMacro">Пожалуйста, выберите макрос!</sys:String>
+    <sys:String x:Key="MsgMacroSaved">✅ Макрос сохранен!</sys:String>
+    <sys:String x:Key="MsgSaveError">Ошибка сохранения: {0}</sys:String>
+    <sys:String x:Key="MsgAutostartError">Ошибка изменения автозапуска: {0}</sys:String>
+    <sys:String x:Key="StrHelpTitle">Справка и документация</sys:String>
+    <sys:String x:Key="StrHelpHeader">Центр справки</sys:String>
+    <sys:String x:Key="StrHelpSubHeader">Здесь вы найдете важную информацию и практические примеры использования приложения.</sys:String>
+    <sys:String x:Key="StrHelpSection1Title">1. Создание макроса и настройка клавиш</sys:String>
+    <sys:String x:Key="StrHelpSection1Text" xml:space="preserve">• Нажмите «+ Новый» слева внизу, чтобы добавить команду.
+• Используйте режим сканирования для распознавания клавиш.
+• Задайте имя макросу и управляйте существующими командами.</sys:String>
+    <sys:String x:Key="StrHelpSection2Title">2. Запуск приложений и фокус окон</sys:String>
+    <sys:String x:Key="StrHelpSection2Text" xml:space="preserve">Укажите путь к программе или используйте фокус-команды:
+• Focus{Kodi} – Выводит Kodi на передний план.
+• Focus{firefox} / Focus{Thunderbird} – Переключение на браузер или почту.
+• Focus{explorer} – Открывает Проводник Windows.</sys:String>
+    <sys:String x:Key="StrHelpSection3Title">3. Горячие клавиши и медиа</sys:String>
+    <sys:String x:Key="StrHelpSection3Text" xml:space="preserve">Используйте клавиатуру как пульт для ПК:
+• %{TAB} – Быстрое переключение задач (Alt+Tab).
+• {SPACE} – Пауза/Воспроизведение (Пробел).
+• %{F4} – Закрыть активное окно (Alt+F4).</sys:String>
+    <sys:String x:Key="StrHelpSection4Title">4. Оформление и язык</sys:String>
+    <sys:String x:Key="StrHelpSection4Text" xml:space="preserve">Настройте тему оформления в правом верхнем углу. 
+Язык интерфейса можно в любой момент изменить в меню.</sys:String>
+    <sys:String x:Key="StrHelpSection5Title">5. Безопасность и автозапуск</sys:String>
+    <sys:String x:Key="StrHelpSection5Text" xml:space="preserve">Сохраняйте макросы в формате JSON через функцию экспорта. 
+Включите автозапуск Windows через иконку молнии.</sys:String>
+</ResourceDictionary>

@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Hintergründe & Container -->
+    <SolidColorBrush x:Key="AppBackground" Color="#180A29"/>
+    <SolidColorBrush x:Key="CardBackground" Color="#2A1245"/>
+    <SolidColorBrush x:Key="BorderColor" Color="#A855F7"/>
+
+    <!-- Texte -->
+    <SolidColorBrush x:Key="TextPrimary" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="TextSecondary" Color="#E9D5FF"/>
+
+    <!-- Akzentfarben & Eingabefelder -->
+    <SolidColorBrush x:Key="PrimaryBlue" Color="#A855F7"/>
+    <SolidColorBrush x:Key="PrimaryHover" Color="#C084FC"/>
+    <SolidColorBrush x:Key="PrimaryPressed" Color="#7E22CE"/>
+    <SolidColorBrush x:Key="InputBackground" Color="#3B1A5E"/>
+    <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#180A29"/>
+
+</ResourceDictionary>

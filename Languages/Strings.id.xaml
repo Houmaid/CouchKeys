@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="WindowTitle">Simple File Renamer Pro</sys:String>
+	<sys:String x:Key="DropAreaText">📁 Tarik file atau folder ke sini (atau klik untuk memilih)</sys:String>
+	<sys:String x:Key="QuickTasks">⚡ Tugas Cepat (Templat):</sys:String>
+	<sys:String x:Key="BtnHelp">Bantuan</sys:String>
+	<sys:String x:Key="BtnAuto">🔍 Saran Otomatis (Cerdas)</sys:String>
+	<sys:String x:Key="BtnClean">✨ Bersihkan Otomatis</sys:String>
+	<sys:String x:Key="BtnSeries">📺 Bersihkan Episode Serial</sys:String>
+	<sys:String x:Key="BtnNumber">🔢 Penomoran Berurutan</sys:String>
+	<sys:String x:Key="ModeSimple">Mode Sederhana</sys:String>
+	<sys:String x:Key="ModeRegex">Mode Pakar (Regex)</sys:String>
+	<sys:String x:Key="LblSearch">Cari / Pola:</sys:String>
+	<sys:String x:Key="PlcSearch">misal: german web h264</sys:String>
+	<sys:String x:Key="LblReplace">Nama Baru / Ganti:</sys:String>
+	<sys:String x:Key="PlcReplace">misal: German kosong kosong</sys:String>
+	<sys:String x:Key="HintText">💡 Tip: Pisahkan beberapa kata dengan spasi. Kata "leer" akan menghapus kata pencarian terkait.</sys:String>
+	<sys:String x:Key="LblVars">Sisipkan Variabel:</sys:String>
+	<sys:String x:Key="ColStatus">Status</sys:String>
+	<sys:String x:Key="ColOriginal">Nama File Asli</sys:String>
+	<sys:String x:Key="ColNew">Nama File Baru</sys:String>
+	<sys:String x:Key="BtnClear">🗑️ Kosongkan</sys:String>
+	<sys:String x:Key="BtnUndo">↶ Batal</sys:String>
+	<sys:String x:Key="BtnRedo">↷ Ulangi</sys:String>
+	<sys:String x:Key="TxtFileCount">0 file dimuat</sys:String>
+	<sys:String x:Key="BtnApply">Terapkan Nama File</sys:String>
+	<sys:String x:Key="StatusReady">Siap</sys:String>
+	<sys:String x:Key="StatusChanged">Diubah</sys:String>
+	<sys:String x:Key="StatusEmptyName">Nama tidak boleh kosong</sys:String>
+	<sys:String x:Key="StatusInvalidChars">Karakter tidak valid</sys:String>
+	<sys:String x:Key="StatusPathTooLong">Jalur terlalu panjang (MAX_PATH)</sys:String>
+	<sys:String x:Key="StatusRegexError">Pola Regex tidak valid</sys:String>
+	<sys:String x:Key="StatusRegexTimeout">Regex batas waktu habis</sys:String>
+	<sys:String x:Key="StatusPatternError">Kesalahan pola</sys:String>
+	<sys:String x:Key="StatusFileNotFound">File tidak ditemukan</sys:String>
+	<sys:String x:Key="StatusDirNotFound">Direktori tidak ditemukan</sys:String>
+	<sys:String x:Key="StatusAccessDenied">Akses ditolak</sys:String>
+	<sys:String x:Key="StatusIOError">Kesalahan I/O (File terkunci)</sys:String>
+	<sys:String x:Key="StatusUnknownError">Kesalahan tidak terduga</sys:String>
+	<sys:String x:Key="HelpTooltip">Buka Bantuan &amp; Panduan</sys:String>
+	<sys:String x:Key="OkButtonText">OK</sys:String>
+	<sys:String x:Key="SuccessRenameMessage">{0} dari {1} file berhasil diubah namanya!</sys:String>
+	<sys:String x:Key="ConfirmTitle">Konfirmasi Diperlukan</sys:String>
+	<sys:String x:Key="NoChangesMessage">Tidak ada perubahan untuk diterapkan.</sys:String>
+	<sys:String x:Key="InfoTitle">Petunjuk</sys:String>
+	<sys:String x:Key="SuccessTitle">Berhasil</sys:String>
+	<sys:String x:Key="TooltipTheme">Ubah Skema Warna</sys:String>
+	<sys:String x:Key="Language">Bahasa Indonesia</sys:String>
+	<sys:String x:Key="HelpTitle">Bantuan &amp; Panduan</sys:String>
+	<sys:String x:Key="HelpContent">Selamat datang di panduan! Di sini Anda dapat menjelaskan cara menggunakan alat ini.</sys:String>
+	<sys:String x:Key="CloseText">Tutup</sys:String>
+	<sys:String x:Key="BtnNeu">+ Baru</sys:String>
+	<sys:String x:Key="BtnLoeschen">Hapus</sys:String>
+	<sys:String x:Key="BtnSpeichern">💾 Simpan / Jalankan</sys:String>
+	<sys:String x:Key="StrEinstellungen">Pengaturan / Editor</sys:String>
+	<sys:String x:Key="StrBesipiel">Contoh Input:</sys:String>
+	<sys:String x:Key="StrListe">Ikhtisar / Daftar:</sys:String>
+    <sys:String x:Key="StrSprache">Pilih Bahasa</sys:String>
+    <sys:String x:Key="StrPayPalTitle">Dukung Proyek</sys:String>
+    <sys:String x:Key="StrSupportProject">Dukung proyek ini</sys:String>
+    <sys:String x:Key="StrSupportSubtext">Penggunaan aplikasi ini sepenuhnya gratis. Jika Anda menyukai aplikasi ini dan ingin mendukung pekerjaan saya, donasi melalui PayPal adalah cara yang bagus untuk melakukannya. Terima kasih!</sys:String>
+    <sys:String x:Key="StrOpenPayPal">Donasi via PayPal</sys:String>
+    <sys:String x:Key="BtnClose">Tutup</sys:String>
+    <sys:String x:Key="StrMakros">Makro Saya</sys:String>
+    <sys:String x:Key="StrImport">Impor</sys:String>
+    <sys:String x:Key="StrExport">Ekspor</sys:String>
+    <sys:String x:Key="StrLiveStatus">⚡Status Input Mentah Langsung</sys:String>
+    <sys:String x:Key="StrKeyLabel">Tombol:  </sys:String>
+    <sys:String x:Key="StrKeyNone">Tidak ada</sys:String>
+    <sys:String x:Key="StrPressKeyPrompt">Tekan tombol pada perangkat input...</sys:String>
+    <sys:String x:Key="StrEditMacro">Edit Makro</sys:String>
+    <sys:String x:Key="StrNameLabel">Nama:</sys:String>
+    <sys:String x:Key="StrNamePlaceholder">Masukkan nama makro...</sys:String>
+    <sys:String x:Key="StrTriggerLabel">Pemicu (Keyboard Sofa):</sys:String>
+    <sys:String x:Key="StrScanButton">🔍 Pindai Tombol</sys:String>
+    <sys:String x:Key="StrActionLabel">Jalankan Aksi:</sys:String>
+    <sys:String x:Key="StrRunAppOption">Jalankan Aplikasi / Skrip (.exe, .bat)</sys:String>
+    <sys:String x:Key="StrBrowseButton">Telusuri...</sys:String>
+    <sys:String x:Key="StrSendKeysOption">Kirim Kombinasi Tombol</sys:String>
+    <sys:String x:Key="StrSaveMacroButton">💾 Simpan Makro</sys:String>
+    <sys:String x:Key="StrNeuMakro">Makro Baru</sys:String>
+    <sys:String x:Key="StrKeineTaste">Tidak ada tombol</sys:String>
+    <sys:String x:Key="StrTasteDrucken">Tekan tombol...</sys:String>
+    <sys:String x:Key="bAutoStart0">Nonaktifkan mulai dengan Windows</sys:String>
+    <sys:String x:Key="bAutoStart1">Aktifkan mulai dengan Windows</sys:String>
+    <sys:String x:Key="MsgCouchDetected">✅ Perangkat Couch terdeteksi! ScanCode={0}</sys:String>
+    <sys:String x:Key="TitleSuccess">Berhasil</sys:String>
+    <sys:String x:Key="MsgFileNotFound">File '{0}' tidak ditemukan.</sys:String>
+    <sys:String x:Key="TitleSecurityAbort">Pembatalan Keamanan</sys:String>
+    <sys:String x:Key="MsgNoPermission">Tidak ada izin eksekusi (coba jalankan aplikasi sebagai administrator).</sys:String>
+    <sys:String x:Key="TitleAccessDenied">Akses Ditolak</sys:String>
+    <sys:String x:Key="MsgMacroExecError">Terjadi kesalahan saat menjalankan makro: {0}</sys:String>
+    <sys:String x:Key="TitleError">Kesalahan</sys:String>
+    <sys:String x:Key="MsgNoValidMacrosFound">Tidak ada makro valid yang ditemukan dalam file.</sys:String>
+    <sys:String x:Key="TitleHint">Catatan</sys:String>
+    <sys:String x:Key="MsgImportPrompt">{0} makro ditemukan.\n\nApakah Anda ingin MENAMBAHKAN makro impor ke daftar yang ada?\n\n[Ya] = Tambahkan ke daftar yang ada\n[Tidak] = GANTI daftar yang ada\n[Batal] = Batalkan impor</sys:String>
+    <sys:String x:Key="TitleImportMode">Pilih Mode Impor</sys:String>
+    <sys:String x:Key="MsgImportSuccess">✅ {0} makro berhasil diimpor!</sys:String>
+    <sys:String x:Key="MsgImportError">Kesalahan saat mengimpor file: {0}</sys:String>
+    <sys:String x:Key="MsgNoMacrosToExport">Tidak ada makro yang tersedia untuk diekspor.</sys:String>
+    <sys:String x:Key="MsgExportSuccess">✅ {0} makro berhasil diekspor!</sys:String>
+    <sys:String x:Key="MsgExportError">Kesalahan saat mengekspor: {0}</sys:String>
+    <sys:String x:Key="MsgPleaseSelectMacro">Silakan pilih makro!</sys:String>
+    <sys:String x:Key="MsgMacroSaved">✅ Makro disimpan!</sys:String>
+    <sys:String x:Key="MsgSaveError">Kesalahan saat menyimpan: {0}</sys:String>
+    <sys:String x:Key="MsgAutostartError">Kesalahan saat mengubah autostart: {0}</sys:String>
+    <sys:String x:Key="StrHelpTitle">Bantuan &amp; Dokumentasi</sys:String>
+    <sys:String x:Key="StrHelpHeader">Pusat Bantuan</sys:String>
+    <sys:String x:Key="StrHelpSubHeader">Temukan informasi penting dan contoh praktis tentang cara menggunakan aplikasi ini.</sys:String>
+    <sys:String x:Key="StrHelpSection1Title">1. Buat Makro &amp; Deteksi Tombol</sys:String>
+    <sys:String x:Key="StrHelpSection1Text" xml:space="preserve">• Klik "+ Baru" di kiri bawah untuk menambah perintah.
+• Gunakan mode pemindaian untuk merekam tombol keyboard secara otomatis.
+• Beri nama makro Anda dan kelola perintah melalui daftar.</sys:String>
+    <sys:String x:Key="StrHelpSection2Title">2. Buka Aplikasi &amp; Fokus Jendela</sys:String>
+    <sys:String x:Key="StrHelpSection2Text" xml:space="preserve">Masukkan jalur aplikasi atau gunakan perintah fokus untuk memunculkan jendela:
+• Focus{Kodi} – Membuka Kodi ke layar.
+• Focus{firefox} / Focus{Thunderbird} – Beralih ke browser atau email.
+• Focus{explorer} – Membuka Windows Explorer.</sys:String>
+    <sys:String x:Key="StrHelpSection3Title">3. Pintasan Keyboard &amp; Kontrol Media</sys:String>
+    <sys:String x:Key="StrHelpSection3Text" xml:space="preserve">Gunakan keyboard seperti remote PC:
+• %{TAB} – Ganti tugas cepat (Alt+Tab).
+• {SPACE} – Putar/Jeda (Spasi).
+• %{F4} – Tutup jendela aktif (Alt+F4).</sys:String>
+    <sys:String x:Key="StrHelpSection4Title">4. Ubah Tampilan &amp; Bahasa</sys:String>
+    <sys:String x:Key="StrHelpSection4Text" xml:space="preserve">Sesuaikan tema di sudut kanan atas. 
+Anda juga dapat mengubah bahasa antarmuka dengan mudah.</sys:String>
+    <sys:String x:Key="StrHelpSection5Title">5. Keamanan &amp; Autostart</sys:String>
+    <sys:String x:Key="StrHelpSection5Text" xml:space="preserve">Cadangkan makro sebagai file JSON melalui fungsi ekspor. 
+Aktifkan autostart Windows melalui ikon petir di bilah judul.</sys:String>
+</ResourceDictionary>

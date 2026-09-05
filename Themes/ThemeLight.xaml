@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="AppBackground" Color="#F8FAFC"/>
+    <SolidColorBrush x:Key="CardBackground" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="BorderColor" Color="#E2E8F0"/>
+    <SolidColorBrush x:Key="TextSecondary" Color="#475569"/>
+
+    <!-- Moderner, harmonischer Blau-Ton für den Light Mode -->
+    <SolidColorBrush x:Key="PrimaryBlue" Color="#2563EB"/>
+    <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#FFFFFF"/>
+    
+</ResourceDictionary>

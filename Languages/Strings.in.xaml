@@ -1,0 +1,132 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="WindowTitle">Simple File Renamer Pro</sys:String>
+	<sys:String x:Key="DropAreaText">📁 फ़ाइलें या फ़ोल्डर यहाँ खींचें (या चुनने के लिए क्लिक करें)</sys:String>
+	<sys:String x:Key="QuickTasks">⚡ त्वरित कार्य (त्वरित टेम्पलेट):</sys:String>
+	<sys:String x:Key="BtnHelp">सहायता</sys:String>
+	<sys:String x:Key="BtnAuto">🔍 स्वचालित सुझाव (बुद्धिमान)</sys:String>
+	<sys:String x:Key="BtnClean">✨ स्वचालित रूप से साफ़ करें</sys:String>
+	<sys:String x:Key="BtnSeries">📺 टीवी सीरीज़ के एपिसोड साफ़ करें</sys:String>
+	<sys:String x:Key="BtnNumber">🔢 क्रमांकित करें</sys:String>
+	<sys:String x:Key="ModeSimple">सरल मोड</sys:String>
+	<sys:String x:Key="ModeRegex">विशेषज्ञ मोड (Regex)</sys:String>
+	<sys:String x:Key="LblSearch">खोजें / पैटर्न:</sys:String>
+	<sys:String x:Key="PlcSearch">उदा. german web h264</sys:String>
+	<sys:String x:Key="LblReplace">नया नाम / बदलें:</sys:String>
+	<sys:String x:Key="PlcReplace">उदा. German leer leer</sys:String>
+	<sys:String x:Key="HintText">💡 टिप: रिक्त स्थान से कई शब्द अलग करें। "leer" शब्द संबंधित खोज शब्द को हटा देता है।</sys:String>
+	<sys:String x:Key="LblVars">चर सम्मिलित करें:</sys:String>
+	<sys:String x:Key="ColStatus">स्थिति</sys:String>
+	<sys:String x:Key="ColOriginal">मूल फ़ाइल नाम</sys:String>
+	<sys:String x:Key="ColNew">नया फ़ाइल नाम</sys:String>
+	<sys:String x:Key="BtnClear">🗑️ साफ़ करें</sys:String>
+	<sys:String x:Key="BtnUndo">↶ पूर्ववत् करें</sys:String>
+	<sys:String x:Key="BtnRedo">↷ फिर से करें</sys:String>
+	<sys:String x:Key="TxtFileCount">0 फ़ाइलें लोड की गईं</sys:String>
+	<sys:String x:Key="BtnApply">फ़ाइल नाम लागू करें</sys:String>
+	<sys:String x:Key="StatusReady">तैयार</sys:String>
+	<sys:String x:Key="StatusChanged">बदला गया</sys:String>
+	<sys:String x:Key="StatusEmptyName">नाम खाली नहीं हो सकता</sys:String>
+	<sys:String x:Key="StatusInvalidChars">अमान्य वर्ण</sys:String>
+	<sys:String x:Key="StatusPathTooLong">पथ बहुत लंबा है (MAX_PATH)</sys:String>
+	<sys:String x:Key="StatusRegexError">अमान्य रेगएक्स पैटर्न</sys:String>
+	<sys:String x:Key="StatusRegexTimeout">रेगएक्स टाइमआउट</sys:String>
+	<sys:String x:Key="StatusPatternError">पैटर्न त्रुटि</sys:String>
+	<sys:String x:Key="StatusFileNotFound">फ़ाइल नहीं मिली</sys:String>
+	<sys:String x:Key="StatusDirNotFound">निर्देशिका नहीं मिली</sys:String>
+	<sys:String x:Key="StatusAccessDenied">पहुँच अस्वीकृत</sys:String>
+	<sys:String x:Key="StatusIOError">I/O त्रुटि (फ़ाइल लॉक है)</sys:String>
+	<sys:String x:Key="StatusUnknownError">अप्रत्याशित त्रुटि</sys:String>
+	<sys:String x:Key="HelpTooltip">सहायता और मार्गदर्शिकाएँ खोलें</sys:String>
+	<sys:String x:Key="OkButtonText">ठीक है</sys:String>
+	<sys:String x:Key="SuccessRenameMessage">{0} में से {1} फ़ाइलें सफलतापूर्वक नाम बदल दी गईं!</sys:String>
+	<sys:String x:Key="ConfirmRenameMessage">क्या आप वाकई {0} फ़ाइलों का नाम बदलना चाहते हैं?&#x0a;&#x0a;नमूना पूर्वावलोकन:&#x0a;{1}</sys:String>
+	<sys:String x:Key="ConfirmTitle">पुष्टि आवश्यक है</sys:String>
+	<sys:String x:Key="NoChangesMessage">लागू करने के लिए कोई बदलाव उपलब्ध नहीं हैं।</sys:String>
+	<sys:String x:Key="InfoTitle">सूचना</sys:String>
+	<sys:String x:Key="SuccessTitle">सफलता</sys:String>
+    <sys:String x:Key="TooltipTheme">थीम बदलें</sys:String>
+    <sys:String x:Key="Language">हिन्दी</sys:String>
+    <sys:String x:Key="HelpTitle">सहायता और निर्देश</sys:String>
+    <sys:String x:Key="HelpContent">गाइड में आपका स्वागत है! यहां आप बता सकते हैं कि टूल का उपयोग कैसे करें।</sys:String>
+    <sys:String x:Key="CloseText">बंद करें</sys:String>
+    <sys:String x:Key="BtnNeu">+ नया</sys:String>
+    <sys:String x:Key="BtnLoeschen">हटाएं</sys:String>
+    <sys:String x:Key="BtnSpeichern">💾 सहेजें / निष्पादित करें</sys:String>
+    <sys:String x:Key="StrEinstellungen">सेटिंग्स / संपादक</sys:String>
+    <sys:String x:Key="StrBesipiel">नमूना इनपुट:</sys:String>
+    <sys:String x:Key="StrSprache">भाषा चुनें</sys:String>
+    <sys:String x:Key="StrPayPalTitle">प्रोजेक्ट का समर्थन करें</sys:String>
+    <sys:String x:Key="StrSupportProject">इस प्रोजेक्ट का समर्थन करें</sys:String>
+    <sys:String x:Key="StrSupportSubtext">इस ऐप का उपयोग पूरी तरह से मुफ़्त है। यदि आपको ऐप पसंद है और आप मेरे काम का समर्थन करना चाहते हैं, तो PayPal के माध्यम से दान करना एक बेहतरीन तरीका है। धन्यवाद!</sys:String>
+    <sys:String x:Key="StrOpenPayPal">PayPal के माध्यम से दान करें</sys:String>
+    <sys:String x:Key="BtnClose">बंद करें</sys:String>
+    <sys:String x:Key="StrListe">अवलोकन / सूची:</sys:String>
+    <sys:String x:Key="StrMakros">मेरे मैक्रोज़</sys:String>
+    <sys:String x:Key="StrImport">आयात</sys:String>
+    <sys:String x:Key="StrExport">निर्यात</sys:String>
+    <sys:String x:Key="StrLiveStatus">⚡लाइव रॉ-इनपुट स्थिति</sys:String>
+    <sys:String x:Key="StrKeyLabel">कुंजी:  </sys:String>
+    <sys:String x:Key="StrKeyNone">कोई नहीं</sys:String>
+    <sys:String x:Key="StrPressKeyPrompt">इनपुट डिवाइस पर कोई कुंजी दबाएँ...</sys:String>
+    <sys:String x:Key="StrEditMacro">मैक्रोज़ संपादित करें</sys:String>
+    <sys:String x:Key="StrNameLabel">नाम:</sys:String>
+    <sys:String x:Key="StrNamePlaceholder">मैक्रो का नाम दर्ज करें...</sys:String>
+    <sys:String x:Key="StrTriggerLabel">ट्रिगर (काउच कीबोर्ड):</sys:String>
+    <sys:String x:Key="StrScanButton">🔍 कुंजी स्कैन करें</sys:String>
+    <sys:String x:Key="StrActionLabel">क्रिया निष्पादित करें:</sys:String>
+    <sys:String x:Key="StrRunAppOption">एप्लिकेशन / स्क्रिप्ट शुरू करें (.exe, .bat)</sys:String>
+    <sys:String x:Key="StrBrowseButton">ब्राउज़ करें...</sys:String>
+    <sys:String x:Key="StrSendKeysOption">कुंजी संयोजन भेजें</sys:String>
+    <sys:String x:Key="StrSaveMacroButton">💾 मैक्रो सहेजें</sys:String>
+    <sys:String x:Key="StrNeuMakro">नया मैक्रो</sys:String>
+    <sys:String x:Key="StrKeineTaste">कोई कुंजी नहीं</sys:String>
+    <sys:String x:Key="StrTasteDrucken">कुंजी दबाएँ...</sys:String>
+    <sys:String x:Key="bAutoStart0">विंडोज के साथ शुरू होना अक्षम करें</sys:String>
+    <sys:String x:Key="bAutoStart1">विंडोज के साथ शुरू होना सक्षम करें</sys:String>
+    <sys:String x:Key="MsgCouchDetected">✅ Couch डिवाइस का पता चला! ScanCode={0}</sys:String>
+    <sys:String x:Key="TitleSuccess">सफलता</sys:String>
+    <sys:String x:Key="MsgFileNotFound">फ़ाइल '{0}' नहीं मिली।</sys:String>
+    <sys:String x:Key="TitleSecurityAbort">सुरक्षा निरस्तीकरण</sys:String>
+    <sys:String x:Key="MsgNoPermission">निष्पादन की अनुमति नहीं है (एप्लिकेशन को व्यवस्थापक के रूप में चलाने का प्रयास करें)।</sys:String>
+    <sys:String x:Key="TitleAccessDenied">पहुँच अस्वीकृत</sys:String>
+    <sys:String x:Key="MsgMacroExecError">मैक्रो निष्पादन त्रुटि: {0}</sys:String>
+    <sys:String x:Key="TitleError">त्रुटि</sys:String>
+    <sys:String x:Key="MsgNoValidMacrosFound">फ़ाइल में कोई वैध मैक्रो नहीं मिला।</sys:String>
+    <sys:String x:Key="TitleHint">सूचना</sys:String>
+    <sys:String x:Key="MsgImportPrompt">{0} मैक्रो पाए गए।\n\nक्या आप आयातित मैक्रो को मौजूदा सूची में जोड़ना चाहते हैं?\n\n[हाँ] = मौजूदा सूची में जोड़ें\n[नहीं] = मौजूदा सूची बदलें\n[रद्द करें] = आयात रद्द करें</sys:String>
+    <sys:String x:Key="TitleImportMode">आयात मोड चुनें</sys:String>
+    <sys:String x:Key="MsgImportSuccess">✅ {0} मैक्रो सफलतापूर्वक आयात किया गया!</sys:String>
+    <sys:String x:Key="MsgImportError">फ़ाइल आयात करने में त्रुटि: {0}</sys:String>
+    <sys:String x:Key="MsgNoMacrosToExport">निर्यात करने के लिए कोई मैक्रो उपलब्ध नहीं है।</sys:String>
+    <sys:String x:Key="MsgExportSuccess">✅ {0} मैक्रो सफलतापूर्वक निर्यात किया गया!</sys:String>
+    <sys:String x:Key="MsgExportError">निर्यात करने में त्रुटि: {0}</sys:String>
+    <sys:String x:Key="MsgPleaseSelectMacro">कृपया एक मैक्रो चुनें!</sys:String>
+    <sys:String x:Key="MsgMacroSaved">✅ मैक्रो सहेजा गया!</sys:String>
+    <sys:String x:Key="MsgSaveError">सहेजने में त्रुटि: {0}</sys:String>
+    <sys:String x:Key="MsgAutostartError">ऑटोस्टार्ट बदलने में त्रुटि: {0}</sys:String>
+    <sys:String x:Key="StrHelpTitle">सहायता और दस्तावेज़</sys:String>
+    <sys:String x:Key="StrHelpHeader">सहायता केंद्र</sys:String>
+    <sys:String x:Key="StrHelpSubHeader">एप्लिकेशन का उपयोग करने के लिए महत्वपूर्ण जानकारी और व्यावहारिक उदाहरण यहाँ प्राप्त करें।</sys:String>
+    <sys:String x:Key="StrHelpSection1Title">1. मैक्रो बनाएं और कुंजियाँ स्कैन करें</sys:String>
+    <sys:String x:Key="StrHelpSection1Text" xml:space="preserve">• नया कमांड जोड़ने के लिए नीचे-बाएँ "+ नया" पर क्लिक करें।
+• कुंजियों को स्वतः स्कैन करने के लिए स्कैन मोड का उपयोग करें।
+• मैक्रो को नाम दें और कमांड प्रबंधित करें।</sys:String>
+    <sys:String x:Key="StrHelpSection2Title">2. ऐप्स खोलें और फोकस कमांड</sys:String>
+    <sys:String x:Key="StrHelpSection2Text" xml:space="preserve">एप्लिकेशन का पथ दर्ज करें या फोकस कमांड का उपयोग करें:
+• Focus{Kodi} – Kodi को स्क्रीन पर लाता है।
+• Focus{firefox} / Focus{Thunderbird} – ब्राउज़र या मेल पर स्विच करता है।
+• Focus{explorer} – विंडोज एक्सप्लोरर खोलता है।</sys:String>
+    <sys:String x:Key="StrHelpSection3Title">3. कीबोर्ड शॉर्टकट और मीडिया नियंत्रण</sys:String>
+    <sys:String x:Key="StrHelpSection3Text" xml:space="preserve">अपने कीबोर्ड को रिमोट की तरह इस्तेमाल करें:
+• %{TAB} – तेज़ टास्क स्विचिंग (Alt+Tab)।
+• {SPACE} – प्ले या पॉज (स्पेसबार)।
+• %{F4} – सक्रिय विंडो बंद करें (Alt+F4)।</sys:String>
+    <sys:String x:Key="StrHelpSection4Title">4. थीम और भाषा बदलें</sys:String>
+    <sys:String x:Key="StrHelpSection4Text" xml:space="preserve">ऊपर दाएँ कोने से डिज़ाइन कस्टमाइज़ करें। 
+आप मेनू से कभी भी भाषा बदल सकते हैं।</sys:String>
+    <sys:String x:Key="StrHelpSection5Title">5. सुरक्षा और ऑटोस्टार्ट</sys:String>
+    <sys:String x:Key="StrHelpSection5Text" xml:space="preserve">मैक्रोज़ को JSON फ़ाइल के रूप में बैकअप करें। 
+विंडोज ऑटोस्टार्ट के लिए लाइटनिंग आइकन सक्षम करें।</sys:String>
+</ResourceDictionary>

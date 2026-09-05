@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Hintergründe & Rahmen -->
+    <SolidColorBrush x:Key="AppBackground" Color="#FDF6E3"/>
+    <SolidColorBrush x:Key="CardBackground" Color="#EEE8D5"/>
+    <SolidColorBrush x:Key="BorderColor" Color="#93A1A1"/>
+
+    <!-- Texte -->
+    <SolidColorBrush x:Key="TextPrimary" Color="#073642"/>
+    <SolidColorBrush x:Key="TextSecondary" Color="#586E75"/>
+
+    <!-- Passende Solarized Akzentfarbe (z. B. Cyan #2AA198 oder Orange #CB4B16) -->
+    <SolidColorBrush x:Key="PrimaryBlue" Color="#2AA198"/>
+</ResourceDictionary>

@@ -1,0 +1,132 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="WindowTitle">Simple File Renamer Pro</sys:String>
+	<sys:String x:Key="DropAreaText">(اسحب الملفات أو المجلدات هنا (أو انقر للاختيار📁 </sys:String>
+	<sys:String x:Key="QuickTasks">⚡ المهام السريعة (قوالب سريعة):</sys:String>
+	<sys:String x:Key="BtnHelp">مساعدة</sys:String>
+	<sys:String x:Key="BtnAuto">🔍 اقتراح تلقائي (ذكِي)</sys:String>
+	<sys:String x:Key="BtnClean">✨ تنظيف تلقائي</sys:String>
+	<sys:String x:Key="BtnSeries">📺 تنظيف حلقات المسلسلات</sys:String>
+	<sys:String x:Key="BtnNumber">🔢 ترقيم تسلسلي</sys:String>
+	<sys:String x:Key="ModeSimple">الوضع البسيط</sys:String>
+	<sys:String x:Key="ModeRegex">وضع الخبير (Regex)</sys:String>
+	<sys:String x:Key="LblSearch">بحث / النمط:</sys:String>
+	<sys:String x:Key="PlcSearch">german web h264 .مثال</sys:String>
+	<sys:String x:Key="LblReplace">الاسم الجديد / استبدال:</sys:String>
+	<sys:String x:Key="PlcReplace">German leer leer .مثال</sys:String>
+	<sys:String x:Key="HintText">💡 تلميح: افصل بين الكلمات المتعددة بمسافات. كلمة "leer" تحذف مصطلح البحث المعني.</sys:String>
+	<sys:String x:Key="LblVars">إدراج المتغيرات:</sys:String>
+	<sys:String x:Key="ColStatus">الحالة</sys:String>
+	<sys:String x:Key="ColOriginal">اسم الملف الأصلي</sys:String>
+	<sys:String x:Key="ColNew">اسم الملف الجديد</sys:String>
+	<sys:String x:Key="BtnClear">🗑️ مسح</sys:String>
+	<sys:String x:Key="BtnUndo">↶ تراجع</sys:String>
+	<sys:String x:Key="BtnRedo">↷ إعادة</sys:String>
+	<sys:String x:Key="TxtFileCount">تم تحميل 0 ملفات</sys:String>
+	<sys:String x:Key="BtnApply">تطبيق أسماء الملفات</sys:String>
+	<sys:String x:Key="StatusReady">جاهز</sys:String>
+	<sys:String x:Key="StatusChanged">تم التغيير</sys:String>
+	<sys:String x:Key="StatusEmptyName">لا يمكن أن يكون الاسم فارغاً</sys:String>
+	<sys:String x:Key="StatusInvalidChars">أحرف غير صالحة</sys:String>
+	<sys:String x:Key="StatusPathTooLong">المسار طويل جداً (MAX_PATH)</sys:String>
+	<sys:String x:Key="StatusRegexError">نمط تعبير منتظم غير صالح</sys:String>
+	<sys:String x:Key="StatusRegexTimeout">انتهت مهلة التعبير المنتظم</sys:String>
+	<sys:String x:Key="StatusPatternError">خطأ في النمط</sys:String>
+	<sys:String x:Key="StatusFileNotFound">الملف غير موجود</sys:String>
+	<sys:String x:Key="StatusDirNotFound">الدليل غير موجود</sys:String>
+	<sys:String x:Key="StatusAccessDenied">تم رفض الوصول</sys:String>
+	<sys:String x:Key="StatusIOError">خطأ في الإدخال/الإخراج (الملف مقفل)</sys:String>
+	<sys:String x:Key="StatusUnknownError">خطأ غير متوقع</sys:String>
+	<sys:String x:Key="HelpTooltip">فتح المساعدة والإرشادات</sys:String>
+	<sys:String x:Key="OkButtonText">موافق</sys:String>
+	<sys:String x:Key="SuccessRenameMessage">{0} من {1} ملفات تمت إعادة تسميتها بنجاح!</sys:String>
+	<sys:String x:Key="ConfirmRenameMessage">هل تريد حقًا إعادة تسمية {0} ملفات؟&#x0a;&#x0a;معاينة نموذجية:&#x0a;{1}</sys:String>
+	<sys:String x:Key="ConfirmTitle">التأكيد مطلوب</sys:String>
+	<sys:String x:Key="NoChangesMessage">لا توجد تغييرات متاحة للتطبيق.</sys:String>
+	<sys:String x:Key="InfoTitle">ملاحظة</sys:String>
+	<sys:String x:Key="SuccessTitle">نجاح</sys:String>
+    <sys:String x:Key="TooltipTheme">تغيير المظهر</sys:String>
+    <sys:String x:Key="Language">العربية</sys:String>
+    <sys:String x:Key="HelpTitle">المساعدة والدليل</sys:String>
+    <sys:String x:Key="HelpContent">مرحبًا بك في الدليل! يمكنك هنا شرح كيفية استخدام الأداة.</sys:String>
+    <sys:String x:Key="CloseText">إغلاق</sys:String>
+    <sys:String x:Key="BtnNeu">+ جديد</sys:String>
+    <sys:String x:Key="BtnLoeschen">حذف</sys:String>
+    <sys:String x:Key="BtnSpeichern">💾 حفظ / تنفيذ</sys:String>
+    <sys:String x:Key="StrEinstellungen">الإعدادات / المحرر</sys:String>
+    <sys:String x:Key="StrBesipiel">إدخال عينة:</sys:String>
+    <sys:String x:Key="StrListe">نظرة عامة / قائمة:</sys:String>
+    <sys:String x:Key="StrSprache">اختر اللغة</sys:String>
+    <sys:String x:Key="StrPayPalTitle">دعم المشروع</sys:String>
+    <sys:String x:Key="StrSupportProject">ادعم هذا المشروع</sys:String>
+    <sys:String x:Key="StrSupportSubtext">استخدام هذا التطبيق مجاني تمامًا. إذا أعجبك التطبيق وتريد دعم عملي، فإن التبرع عبر بايبال (PayPal) يعد طريقة رائعة للقيام بذلك. شكرًا لك!</sys:String>
+    <sys:String x:Key="StrOpenPayPal">التبرع عبر PayPal</sys:String>
+    <sys:String x:Key="BtnClose">إغلاق</sys:String>
+    <sys:String x:Key="StrMakros">ماكروهاتي</sys:String>
+    <sys:String x:Key="StrImport">استيراد</sys:String>
+    <sys:String x:Key="StrExport">تصدير</sys:String>
+    <sys:String x:Key="StrLiveStatus">حالة الإدخال المباشر الخام⚡</sys:String>
+    <sys:String x:Key="StrKeyLabel">المفتاح :  </sys:String>
+    <sys:String x:Key="StrKeyNone">لا شيء</sys:String>
+    <sys:String x:Key="StrPressKeyPrompt">اضغط على مفتاح في جهاز الإدخال...</sys:String>
+    <sys:String x:Key="StrEditMacro">تعديل الماكرو</sys:String>
+    <sys:String x:Key="StrNameLabel">الاسم:</sys:String>
+    <sys:String x:Key="StrNamePlaceholder">أدخل اسم الماكرو...</sys:String>
+    <sys:String x:Key="StrTriggerLabel">المشغل (لوحة مفاتيح الأريكة):</sys:String>
+    <sys:String x:Key="StrScanButton">فحص المفتاح🔍</sys:String>
+    <sys:String x:Key="StrActionLabel">تنفيذ الإجراء:</sys:String>
+    <sys:String x:Key="StrRunAppOption">تشغيل تطبيق / برنامج نصي (.exe, .bat)</sys:String>
+    <sys:String x:Key="StrBrowseButton">استعراض...</sys:String>
+    <sys:String x:Key="StrSendKeysOption">إرسال اختصار لوحة المفاتيح</sys:String>
+    <sys:String x:Key="StrSaveMacroButton">💾 حفظ الماكرو</sys:String>
+    <sys:String x:Key="StrNeuMakro">ماكرو جديد</sys:String>
+    <sys:String x:Key="StrKeineTaste">لا يوجد مفتاح</sys:String>
+    <sys:String x:Key="StrTasteDrucken">اضغط على المفتاح...</sys:String>
+    <sys:String x:Key="bAutoStart0">تعطيل البدء مع ويندوز</sys:String>
+    <sys:String x:Key="bAutoStart1">تفعيل البدء مع ويندوز</sys:String>
+    <sys:String x:Key="MsgCouchDetected">✅ تم اكتشاف جهاز Couch! ScanCode={0}</sys:String>
+    <sys:String x:Key="TitleSuccess">نجاح</sys:String>
+    <sys:String x:Key="MsgFileNotFound">الملف '{0}' غير موجود.</sys:String>
+    <sys:String x:Key="TitleSecurityAbort">إلغاء أمني</sys:String>
+    <sys:String x:Key="MsgNoPermission">لا توجد صلاحية تنفيذ (جرب تشغيل التطبيق كمسؤول).</sys:String>
+    <sys:String x:Key="TitleAccessDenied">تم رفض الوصول</sys:String>
+    <sys:String x:Key="MsgMacroExecError">خطأ في تنفيذ الماكرو: {0}</sys:String>
+    <sys:String x:Key="TitleError">خطأ</sys:String>
+    <sys:String x:Key="MsgNoValidMacrosFound">لم يتم العثور على وحدات ماكرو صالحة في الملف.</sys:String>
+    <sys:String x:Key="TitleHint">تنبيه</sys:String>
+    <sys:String x:Key="MsgImportPrompt">تم العثور على {0} ماكرو.\n\nهل تريد إضافة وحدات الماكرو المستوردة إلى القائمة الحالية؟\n\n[نعم] = إلحاق بالقائمة الحالية\n[لا] = استبدال القائمة الحالية\n[إلغاء] = إلغاء الاستيراد</sys:String>
+    <sys:String x:Key="TitleImportMode">اختر وضع الاستيراد</sys:String>
+    <sys:String x:Key="MsgImportSuccess">✅ تم استيراد {0} ماكرو بنجاح!</sys:String>
+    <sys:String x:Key="MsgImportError">خطأ أثناء استيراد الملف: {0}</sys:String>
+    <sys:String x:Key="MsgNoMacrosToExport">لا توجد وحدات ماكرو للتصدير.</sys:String>
+    <sys:String x:Key="MsgExportSuccess">✅ تم تصدير {0} ماكرو بنجاح!</sys:String>
+    <sys:String x:Key="MsgExportError">خطأ أثناء التصدير: {0}</sys:String>
+    <sys:String x:Key="MsgPleaseSelectMacro">الرجاء اختيار ماكرو!</sys:String>
+    <sys:String x:Key="MsgMacroSaved">✅ تم حفظ الماكرو!</sys:String>
+    <sys:String x:Key="MsgSaveError">خطأ أثناء الحفظ: {0}</sys:String>
+    <sys:String x:Key="MsgAutostartError">خطأ أثناء تغيير التشغيل التلقائي: {0}</sys:String>
+    <sys:String x:Key="StrHelpTitle">المساعدة والوثائق</sys:String>
+    <sys:String x:Key="StrHelpHeader">مركز المساعدة</sys:String>
+    <sys:String x:Key="StrHelpSubHeader">اعثر على معلومات مهمة وأمثلة عملية حول كيفية استخدام التطبيق.</sys:String>
+    <sys:String x:Key="StrHelpSection1Title">1. إنشاء ماكرو وتعلم المفاتيح</sys:String>
+    <sys:String x:Key="StrHelpSection1Text" xml:space="preserve">• انقر فوق "+ جديد" في أسفل اليسار لإضافة أمر.
+• استخدم وضع الفحص لالتقاط المفاتيح تلقائياً.
+• قم تسمية الماكرو وإدارة الأوامر بسهولة.</sys:String>
+    <sys:String x:Key="StrHelpSection2Title">2. فتح التطبيقات والتركيز على النوافذ</sys:String>
+    <sys:String x:Key="StrHelpSection2Text" xml:space="preserve">أدخل مسار التطبيق أو استخدم أوامر التركيز:
+• Focus{Kodi} – يعرض Kodi في المقدمة.
+• Focus{firefox} / Focus{Thunderbird} – التبديل إلى المتصفح أو البريد.
+• Focus{explorer} – يفتح مستكشف ويندوز.</sys:String>
+    <sys:String x:Key="StrHelpSection3Title">3. اختصارات لوحة المفاتيح والوسائط</sys:String>
+    <sys:String x:Key="StrHelpSection3Text" xml:space="preserve">استخدم لوحة المفاتيح كجهاز تحكم:
+• %{TAB} – التبديل السريع بين المهام (Alt+Tab).
+• {SPACE} – تشغيل أو إيقاف الوسائط (مسافة).
+• %{F4} – إغلاق النافذة الحالية فوراً (Alt+F4).</sys:String>
+    <sys:String x:Key="StrHelpSection4Title">4. المظهر واللغة</sys:String>
+    <sys:String x:Key="StrHelpSection4Text" xml:space="preserve">قم بتخصيص السمات في الزاوية العلوية اليمنى. 
+يمكنك تغيير لغة واجهة المستخدم من القائمة في أي وقت.</sys:String>
+    <sys:String x:Key="StrHelpSection5Title">5. الأمان والنسخ الاحتياطي والبدء التلقائي</sys:String>
+    <sys:String x:Key="StrHelpSection5Text" xml:space="preserve">قم بعمل نسخة احتياطية كملف JSON. 
+فعّل التشغيل التلقائي لنظام ويندوز عبر أيقونة البرق.</sys:String>
+</ResourceDictionary>

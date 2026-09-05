@@ -1,0 +1,562 @@
+﻿<Window x:Class="CouchKeys.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CouchKeys Studio" Height="620" Width="920"
+        MinWidth="850" MinHeight="550"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        Background="{DynamicResource AppBackground}"
+        Foreground="{DynamicResource TextPrimary}">
+
+    <Window.Resources>
+        <!-- Wiederverwendbarer Style für Vektor-Header-Buttons -->
+        <Style x:Key="HeaderVectorButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="Margin" Value="4,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextPrimary}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#20FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <tb:TaskbarIcon x:Name="MyNotifyIcon"
+                ToolTipText="CouchKeys läuft"
+                IconSource="/Assets/couchkeys.ico"
+                TrayMouseDoubleClick="MenuOpen_Click">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Öffnen" Click="MenuOpen_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Beenden" Click="MenuExit_Click"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+
+        <!-- TOP BAR: Titel & Sprachauswahl / Themen / Hilfe / PayPal -->
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Überschrift Hauptfenster -->
+            <TextBlock Text="CouchKeys Studio" 
+                       FontSize="20" FontWeight="Bold" 
+                       Foreground="{DynamicResource TextPrimary}"/>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+
+                <!-- 1. Sprachauswahl Button mit Dropdown -->
+                <Button x:Name="BtnLanguage" Click="BtnContextMenu_Click" ToolTip="{DynamicResource StrSprache}" Style="{StaticResource HeaderVectorButtonStyle}">
+                    <Button.ContextMenu>
+                        <ContextMenu x:Name="CmLanguage" Placement="Bottom" VerticalOffset="6">
+                            <!-- Deutsch -->
+                            <MenuItem Tag="de" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/de.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Deutsch" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- English -->
+                            <MenuItem Tag="en" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/en.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="English" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Español -->
+                            <MenuItem Tag="es" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/es.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Español" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Français -->
+                            <MenuItem Tag="fr" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/fr.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Français" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Bahasa Indonesia -->
+                            <MenuItem Tag="id" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/id.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Indonesian" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Italiano -->
+                            <MenuItem Tag="it" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/it.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Italiano" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Português -->
+                            <MenuItem Tag="pr" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/pr.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Português" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Русский -->
+                            <MenuItem Tag="rs" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/rs.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Русский" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Türkçe -->
+                            <MenuItem Tag="tr" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/tr.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Türkçe" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- العربية -->
+                            <MenuItem Tag="ar" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/ar.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="العربية" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- 中文 -->
+                            <MenuItem Tag="ch" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/ch.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="中文" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- 日本語 -->
+                            <MenuItem Tag="jp" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/jp.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="日本語" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- 한국어 -->
+                            <MenuItem Tag="ko" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/ko.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="한국어" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- বাংলা -->
+                            <MenuItem Tag="bg" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/bg.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="বাংলা" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- हिन्दी -->
+                            <MenuItem Tag="in" Click="SwitchLanguage_Click">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/in.png" Width="20" Height="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="हिन्दी" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <!-- Globus Vektor Icon -->
+                    <Path Width="18" Height="18" Stretch="Uniform" 
+                          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" 
+                          Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18V19.93M17.9,17.39C17.64,16.58 16.9,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39Z"/>
+                </Button>
+
+                <!-- 2. Theme Switcher Button mit Dropdown -->
+                <Button x:Name="BtnTheme" Click="BtnContextMenu_Click" ToolTip="{DynamicResource TooltipTheme}" Style="{StaticResource HeaderVectorButtonStyle}">
+                    <Button.ContextMenu>
+                        <ContextMenu x:Name="ThemeContextMenu" Placement="Bottom" VerticalOffset="6">
+                            <MenuItem x:Name="MenuThemeSystem" Tag="ThemeSystem" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="System (Auto)"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeLight" Tag="ThemeLight" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Light Mode"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeDark" Tag="ThemeDark" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Dark Mode"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem x:Name="MenuThemeDracula" Tag="ThemeDracula" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Dracula"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeEmerald" Tag="ThemeEmerald" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Emerald Green"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeGruvbox" Tag="ThemeGruvbox" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Gruvbox"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeHighContrastDark" Tag="ThemeHighContrastDark" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="High Contrast (Dark)"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeHighContrastLight" Tag="ThemeHighContrastLight" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="High Contrast (Light)"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeMonokai" Tag="ThemeMonokai" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Monokai"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeNord" Tag="ThemeNord" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Nord Ice"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeRoseGold" Tag="ThemeRoseGold" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Rose Gold / Blush"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemePurple" Tag="ThemePurple" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Royal Purple"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeSolarizedDark" Tag="ThemeSolarizedDark" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Solarized (Dark)"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeSolarizedLight" Tag="ThemeSolarizedLight" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Solarized (Light)"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="MenuThemeAmber" Tag="ThemeAmber" Click="ThemeMenuItem_Click" IsCheckable="True">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Warm Amber"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <!-- Farbpalette Vektor Icon -->
+                    <Path Width="18" Height="18" Stretch="Uniform" 
+                          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"
+                          Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,10.89 21.1,10 20,10H18.2C17.56,10 17,9.44 17,8.8C17,8.5 17.11,8.23 17.3,8.03C17.8,7.5 18,6.8 18,6A4,4 0 0,0 14,2H12M6.5,11A1.5,1.5 0 0,1 5,9.5A1.5,1.5 0 0,1 6.5,8A1.5,1.5 0 0,1 8,9.5A1.5,1.5 0 0,1 6.5,11M9.5,7A1.5,1.5 0 0,1 8,5.5A1.5,1.5 0 0,1 9.5,4A1.5,1.5 0 0,1 11,5.5A1.5,1.5 0 0,1 9.5,7M14.5,7A1.5,1.5 0 0,1 13,5.5A1.5,1.5 0 0,1 14.5,4A1.5,1.5 0 0,1 16,5.5A1.5,1.5 0 0,1 14.5,7M17.5,11A1.5,1.5 0 0,1 16,9.5A1.5,1.5 0 0,1 17.5,8A1.5,1.5 0 0,1 19,9.5A1.5,1.5 0 0,1 17.5,11Z"/>
+                </Button>
+                <Button x:Name="BtnAutostartIcon" Click="BtnAutostartIcon_Click" Style="{StaticResource HeaderVectorButtonStyle}">
+                    <Path x:Name="PathRocket" Width="18" Height="18" Stretch="Uniform" 
+          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"/>
+                </Button>
+                <!-- 3. Hilfe-Button -->
+                <Button Click="BtnHelp_Click" ToolTip="{DynamicResource HelpTooltip}" Style="{StaticResource HeaderVectorButtonStyle}">
+                    <!-- Fragezeichen Vektor Icon -->
+                    <Path Width="18" Height="18" Stretch="Uniform" 
+                          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"
+                          Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4M11,16H13V18H11V16M12,6A3.5,3.5 0 0,0 8.5,9.5H10.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5C13.5,10.5 12,11.25 12,13H11V15H13V13.8C14.5,12.8 15.5,11.5 15.5,9.5A3.5,3.5 0 0,0 12,6Z"/>
+                </Button>
+
+                <!-- 4. PayPal Button -->
+                <Button Click="BtnPP_Click" ToolTip="{DynamicResource StrPayPalTitle}" Style="{StaticResource HeaderVectorButtonStyle}">
+                    <TextBlock Text="P" 
+               FontWeight="Bold" 
+               FontStyle="Italic" 
+               FontSize="22" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Center"
+               Foreground="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- HAUPTBEREICH (2 Spalten) -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LINKES PANEL: Makro Liste -->
+            <Border Grid.Column="0" Background="{DynamicResource CardBackground}" CornerRadius="8" Padding="14" BorderBrush="{DynamicResource BorderBrushColor}" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header-Zeile: Titel & Import/Export Buttons -->
+                    <Grid Margin="0,0,0,12">
+                        <TextBlock Text="{DynamicResource StrMakros}" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource TextPrimary}" VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button x:Name="BtnImportMacros" 
+                                    Content="{DynamicResource StrImport}" 
+                                    Padding="8,4" 
+                                    FontSize="12" 
+                                    Margin="0,0,6,0"
+                                    Click="BtnImportMacros_Click" 
+                                    ToolTip="Makros aus einer JSON-Datei wiederherstellen"/>
+                            <Button x:Name="BtnExportMacros" 
+                                    Content="{DynamicResource StrExport}" 
+                                    Padding="8,4" 
+                                    FontSize="12" 
+                                    Click="BtnExportMacros_Click" 
+                                    ToolTip="Alle Makros in eine JSON-Datei exportieren" Cursor="Hand"/>
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+
+<ListBox x:Name="LstMacros" 
+         Grid.Row="1" 
+         ItemsSource="{Binding Macros}" 
+         Margin="0,0,0,12" 
+         SelectionChanged="LstMacros_SelectionChanged">
+    <ListBox.ItemTemplate>
+        <DataTemplate>
+            <StackPanel Margin="6">
+                <TextBlock Text="{Binding Name}" 
+                           FontWeight="SemiBold" 
+                           FontSize="14"/>
+                <TextBlock Text="{Binding TriggerKey, StringFormat='Taste: {0}'}" 
+                           FontSize="12" 
+                           Foreground="{DynamicResource TextSecondary}" 
+                           Margin="0,2,0,0"/>
+            </StackPanel>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+</ListBox>
+
+
+
+
+
+
+
+
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="{DynamicResource BtnNeu}" Click="BtnAddMacro_Click"/>
+                        <Button Grid.Column="2" Content="{DynamicResource BtnLoeschen}" Foreground="{DynamicResource ErrorColor}" Click="BtnDeleteMacro_Click"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            <!-- RECHTES PANEL: Status & Editor -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="{DynamicResource CardBackground}" CornerRadius="8" Padding="14" BorderBrush="{DynamicResource BorderBrushColor}" BorderThickness="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                            <TextBlock Text="{DynamicResource StrLiveStatus}" FontWeight="Bold" FontSize="12" Foreground="{DynamicResource TextSecondary}"/>
+                            <TextBlock x:Name="TxtLastDevice" Text="{DynamicResource StrPressKeyPrompt}" FontSize="11" Foreground="{DynamicResource TextSecondary}" 
+       TextTrimming="CharacterEllipsis" Margin="0,4,10,0" ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}"/>
+                        </StackPanel>
+
+                        <!-- Rechte Spalte: Tastenanzeige und Autostart-Checkbox untereinander -->
+                        <Border Grid.Column="1" Background="{DynamicResource AppBackground}" CornerRadius="6" Padding="12,6" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{DynamicResource StrKeyLabel}" Foreground="{DynamicResource TextSecondary}" FontSize="12" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="TxtLastKey" Text="33" Foreground="{DynamicResource TextSecondary}" FontWeight="Bold" FontSize="14" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <!-- Editor Card -->
+                <Border Grid.Row="2" Background="{DynamicResource CardBackground}" CornerRadius="8" Padding="20" BorderBrush="{DynamicResource BorderBrushColor}" BorderThickness="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Scrollbarer Formularbereich -->
+                        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" Margin="0,0,0,16">
+                            <StackPanel>
+                                <!-- Header-Zeile mit Titel und Autostart-CheckBox -->
+                                <Grid Margin="0,0,0,16">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{DynamicResource StrEditMacro}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextPrimary}" VerticalAlignment="Center"/>
+  
+                                </Grid>
+
+                                <!-- 1. Makro Name mit Platzhalter -->
+                                <TextBlock Text="{DynamicResource StrNameLabel}" FontWeight="SemiBold" FontSize="13" Foreground="{DynamicResource TextPrimary}" Margin="0,0,0,6"/>
+                                <Grid Margin="0,0,0,16">
+                                    <TextBox x:Name="TxtMacroName" 
+             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+             Padding="8,6" FontSize="13" 
+             BorderBrush="{DynamicResource BorderColor}"
+             Background="{DynamicResource InputBackground}" 
+             Foreground="{DynamicResource TextPrimary}"/>
+
+                                    <TextBlock Text="{DynamicResource StrNamePlaceholder}" 
+               Foreground="{DynamicResource TextSecondary}" 
+               FontSize="13"
+               VerticalAlignment="Center" 
+               Margin="10,0,0,0" 
+               IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, ElementName=TxtMacroName}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                                <!-- 2. Trigger -->
+                                <TextBlock Text="{DynamicResource StrTriggerLabel}" FontWeight="SemiBold" FontSize="13" Foreground="{DynamicResource TextPrimary}" Margin="0,0,0,6"/>
+                                <Grid Margin="0,0,0,16">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="8"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="BtnScan" Content="{DynamicResource StrScanButton}" Click="BtnScan_Click"/>
+                                    <TextBox Grid.Column="2" x:Name="TxtTriggerInfo" IsReadOnly="True" 
+             Background="{DynamicResource InputBackground}" 
+             Foreground="{DynamicResource TextPrimary}" 
+             Padding="8,6" VerticalAlignment="Center"
+             BorderBrush="{DynamicResource BorderColor}"/>
+                                </Grid>
+
+                                <!-- 3. Aktion -->
+                                <TextBlock Text="{DynamicResource StrActionLabel}" FontWeight="SemiBold" FontSize="13" Foreground="{DynamicResource TextPrimary}" Margin="0,0,0,8"/>
+
+                                <RadioButton x:Name="RbRunApp" Content="{DynamicResource StrRunAppOption}" IsChecked="True" 
+             Margin="0,0,0,8" FontWeight="Medium" Foreground="{DynamicResource TextPrimary}" Checked="ActionType_Changed"/>
+
+                                <Grid x:Name="GridAppPath" Margin="20,0,0,16">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="8"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="TxtAppPath" Padding="8,6" FontSize="13" 
+             BorderBrush="{DynamicResource BorderColor}" 
+             Background="{DynamicResource InputBackground}" 
+             Foreground="{DynamicResource TextPrimary}" 
+             VerticalAlignment="Center"/>
+                                    <Button Grid.Column="2" Content="{DynamicResource StrBrowseButton}" Click="BtnBrowseApp_Click"/>
+                                </Grid>
+
+                                <RadioButton x:Name="RbSendKeys" Content="{DynamicResource StrSendKeysOption}" 
+             Margin="0,0,0,8" FontWeight="Medium" Foreground="{DynamicResource TextPrimary}" Checked="ActionType_Changed"/>
+
+                                <Grid x:Name="GridSendKeys" Margin="20,0,0,16" Visibility="Collapsed">
+                                    <TextBox x:Name="TxtKeySequence" Padding="8,6" FontSize="13" 
+             BorderBrush="{DynamicResource BorderColor}" 
+             Background="{DynamicResource InputBackground}" 
+             Foreground="{DynamicResource TextPrimary}" 
+             ToolTip="z.B. %{TAB}"/>
+                                </Grid>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <!-- Fixed Speichern Button am unteren Rand -->
+                        <Button Grid.Row="1" Content="{DynamicResource StrSaveMacroButton}" Style="{StaticResource PrimaryButton}" Click="btnSaveMacro_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
