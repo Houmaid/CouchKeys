@@ -44,11 +44,7 @@ namespace AppTemplate.PayPal
 
         private void BtnOpenPayPal_Click(object sender, RoutedEventArgs e)
         {
-            bool isGerman = _language != null && _language.Equals("de", StringComparison.OrdinalIgnoreCase);
-
-            string url = isGerman
-                ? "https://www.paypal.de/OmarHoumaid"
-                : "https://www.paypal.com/OmarHoumaid";
+            string url = "https://paypal.me/OmarHoumaid";
 
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {

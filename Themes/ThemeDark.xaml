@@ -9,5 +9,7 @@
     <!-- Angenehmes, modernes Soft-Indigo/Blau -->
     <SolidColorBrush x:Key="PrimaryBlue" Color="#2563EB"/>
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#FFFFFF"/>
-    
+
+    <SolidColorBrush x:Key="SelectionOverlay" Color="#2563EB" Opacity="0.18"/>
+
 </ResourceDictionary>

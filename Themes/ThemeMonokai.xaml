@@ -6,4 +6,6 @@
 	<SolidColorBrush x:Key="TextPrimary" Color="#F8F8F2"/>
 	<SolidColorBrush x:Key="TextSecondary" Color="#E6DB74"/>
 	<SolidColorBrush x:Key="PrimaryBlue" Color="#F92672"/>
+
+    <SolidColorBrush x:Key="SelectionOverlay" Color="#F8F8F2" Opacity="0.18"/>
 </ResourceDictionary>

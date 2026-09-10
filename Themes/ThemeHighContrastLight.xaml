@@ -11,4 +11,7 @@
     <SolidColorBrush x:Key="PrimaryBlue" Color="#000000"/>
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#FFFFFF"/>
 
+    <SolidColorBrush x:Key="SelectionOverlay" Color="#000000" Opacity="0.35"/>
+    <SolidColorBrush x:Key="RowHighlightForeground" Color="#FFFFFF"/>
+
 </ResourceDictionary>

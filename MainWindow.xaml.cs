@@ -2,14 +2,12 @@
 using Microsoft.VisualBasic;
 using Microsoft.Win32;
 using System;
-using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -36,6 +34,10 @@ namespace CouchKeys
         #region Win32 Konstanten & Strukturen
         private const int WM_INPUT = 0x00FF;
         private const int RIDEV_INPUTSINK = 0x00000100;
+        private const int RIDEV_DEVNOTIFY = 0x00002000;
+        private const int WM_INPUT_DEVICE_CHANGE = 0x00FE;
+        private const int GIDC_ARRIVAL = 1;
+        private const int GIDC_REMOVAL = 2;
         private const int RID_INPUT = 0x10000003;
         private const int RID_DEVICENAME = 0x20000007;
         private const int WH_KEYBOARD_LL = 13;
@@ -168,6 +170,60 @@ namespace CouchKeys
         private static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
         #endregion
 
+        #region Logging
+        private static readonly string _logFilePath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "CouchKeys", "error.log");
+
+        private static readonly object _logLock = new();
+
+        public static void LogError(string context, Exception ex)
+        {
+            try
+            {
+                lock (_logLock)
+                {
+                    string? dir = Path.GetDirectoryName(_logFilePath);
+                    if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+                        Directory.CreateDirectory(dir);
+
+                    // Verhindert unbegrenztes Wachstum: Log kappen, wenn er zu groß wird
+                    if (File.Exists(_logFilePath) && new FileInfo(_logFilePath).Length > 2 * 1024 * 1024) // 2 MB
+                    {
+                        File.Delete(_logFilePath);
+                    }
+
+                    File.AppendAllText(_logFilePath,
+                        $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{context}] {ex.GetType().Name}: {ex.Message}\n{ex.StackTrace}\n---\n");
+                }
+            }
+            catch
+            {
+                // Logging darf niemals selbst eine Exception werfen
+            }
+        }
+
+        public static void LogInfo(string context, string message)
+        {
+            try
+            {
+                lock (_logLock)
+                {
+                    string? dir = Path.GetDirectoryName(_logFilePath);
+                    if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+                        Directory.CreateDirectory(dir);
+
+                    File.AppendAllText(_logFilePath,
+                        $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{context}] INFO: {message}\n");
+                }
+            }
+            catch
+            {
+                // Logging darf niemals selbst eine Exception werfen
+            }
+        }
+        #endregion
+
         #region Member
         private IntPtr _hwnd = IntPtr.Zero;
 
@@ -205,8 +261,23 @@ namespace CouchKeys
         public MainWindow()
         {
             InitializeComponent();
+            var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            this.Title = $"CouchKeys v{version.Major}.{version.Minor}";
+
+            // ✅ ROBUSTHEIT: Globale Absicherung gegen unbehandelte Exceptions
+            AppDomain.CurrentDomain.UnhandledException += (s, e) =>
+            {
+                if (e.ExceptionObject is Exception ex)
+                    LogError("UnhandledException", ex);
+            };
+
+            Application.Current.DispatcherUnhandledException += (s, e) =>
+            {
+                LogError("DispatcherUnhandledException", e.Exception);
+                e.Handled = true; // verhindert Absturz der App bei UI-Thread-Fehlern
+            };
+
             DataContext = this;
-            LstMacros.ItemsSource = Macros;
 
             string savedLang = CouchKeys.Properties.Settings.Default.SelectedLanguage;
             if (!string.IsNullOrEmpty(savedLang))
@@ -238,6 +309,8 @@ namespace CouchKeys
                              // Hier ggf. dein Tray-Icon auf sichtbar / Notification setzen, falls nötig
             }
         }
+
+
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
@@ -248,16 +321,18 @@ namespace CouchKeys
             source.AddHook(HwndAdapter);
 
             RAWINPUTDEVICE[] rid = new RAWINPUTDEVICE[2];
-            rid[0].usUsagePage = 0x01; rid[0].usUsage = 0x06; rid[0].dwFlags = RIDEV_INPUTSINK; rid[0].hwndTarget = hwnd;
-            rid[1].usUsagePage = 0x0C; rid[1].usUsage = 0x01; rid[1].dwFlags = RIDEV_INPUTSINK; rid[1].hwndTarget = hwnd;
+            rid[0].usUsagePage = 0x01; rid[0].usUsage = 0x06; rid[0].dwFlags = RIDEV_INPUTSINK | RIDEV_DEVNOTIFY; rid[0].hwndTarget = hwnd;
+            rid[1].usUsagePage = 0x0C; rid[1].usUsage = 0x01; rid[1].dwFlags = RIDEV_INPUTSINK | RIDEV_DEVNOTIFY; rid[1].hwndTarget = hwnd;
 
             bool registered = RegisterRawInputDevices(rid, (uint)rid.Length, (uint)Marshal.SizeOf(rid[0]));
-            //if (!registered) Debug.WriteLine($"RawInput failed: {Marshal.GetLastWin32Error()}");
+            if (!registered)
+                LogError("OnSourceInitialized", new Win32Exception(Marshal.GetLastWin32Error(), "RegisterRawInputDevices fehlgeschlagen"));
 
             _proc = HookCallback;
             _procGcKeeper = _proc; // Verhindert GC-Collection des Delegates
             _lowLevelHookId = SetWindowsHookEx(WH_KEYBOARD_LL, _proc, GetModuleHandle(null), 0);
-            //if (_lowLevelHookId == IntPtr.Zero) Debug.WriteLine($"Hook failed: {Marshal.GetLastWin32Error()}");
+            if (_lowLevelHookId == IntPtr.Zero)
+                LogError("OnSourceInitialized", new Win32Exception(Marshal.GetLastWin32Error(), "SetWindowsHookEx fehlgeschlagen"));
 
             string[] args = Environment.GetCommandLineArgs();
             if (Array.Exists(args, arg => arg.Equals("--autostart", StringComparison.OrdinalIgnoreCase)))
@@ -285,6 +360,17 @@ namespace CouchKeys
             if (msg == WM_INPUT)
             {
                 ProcessRawInput(lParam);
+                handled = true;
+            }
+            else if (msg == WM_INPUT_DEVICE_CHANGE)
+            {
+                // ✅ ROBUSTHEIT: Gerät wurde ein- oder ausgesteckt -> Cache für dieses Handle verwerfen,
+                // da Windows hDevice-Handles bei Reconnect recyceln kann (sonst stale Gerätename möglich).
+                _deviceCache.TryRemove(lParam, out _);
+
+                int change = wParam.ToInt32();
+                LogInfo("DeviceChange", $"{(change == GIDC_ARRIVAL ? "Arrival" : "Removal")} hDevice={lParam}");
+
                 handled = true;
             }
             return IntPtr.Zero;
@@ -344,7 +430,7 @@ namespace CouchKeys
 
         private IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
         {
-           
+
 
             // Ignoriert jeglichen Input in den ersten 500ms nach Programmstart (verhindert den Start-Bug)
             if ((DateTime.Now - _startupTime).TotalMilliseconds < 500)
@@ -358,7 +444,7 @@ namespace CouchKeys
             if (nCode >= 0)
             {
                 KBDLLHOOKSTRUCT kbd = Marshal.PtrToStructure<KBDLLHOOKSTRUCT>(lParam);
-                
+
                 bool isInjected = (kbd.flags & 0x10) != 0; // LLKHF_INJECTED
                 if (isInjected)
                 {
@@ -386,15 +472,12 @@ namespace CouchKeys
                             var normalizedLastPath = NormalizeDevicePath(_lastInputDevicePath);
 
                             int primaryCode = kbd.scanCode != 0 ? kbd.scanCode : kbd.vkCode;
-                            
-                            //Debug.WriteLine($"[DEBUG] Device: {normalizedLastPath} | Scan: {kbd.scanCode} | VK: {kbd.vkCode} | Primary: {primaryCode}");
-                            
+
                             var keyByScan = (normalizedLastPath, primaryCode);
                             var keyByVk = (normalizedLastPath, kbd.vkCode);
 
-                            //bool hasMacro = _scanCodeMacroLookup.TryGetValue(keyByScan, out var macro) ||
-                            //               _scanCodeMacroLookup.TryGetValue(keyByVk, out macro);
-                            bool hasMacro = _scanCodeMacroLookup.TryGetValue(keyByScan, out var macro);
+                            bool hasMacro = _scanCodeMacroLookup.TryGetValue(keyByScan, out var macro) ||
+                                            _scanCodeMacroLookup.TryGetValue(keyByVk, out macro);
                             if (hasMacro)
                             {
                                 if (isKeyDown)
@@ -405,7 +488,6 @@ namespace CouchKeys
                             }
 
                             bool isCouchDevice = _deviceMonitor.IsCouchDevice(normalizedLastPath);
-                            //Debug.WriteLine($"[HOOK] Device: {normalizedLastPath} | VkCode: {kbd.vkCode} | ScanCode: {kbd.scanCode} | Primary: {primaryCode}");
                             if (isCouchDevice && (kbd.scanCode == 56 || kbd.scanCode == 0))
                             {
                                 return (IntPtr)1;
@@ -414,16 +496,17 @@ namespace CouchKeys
                     }
                     catch (Exception ex)
                     {
-                        //Debug.WriteLine($"Hook error: {ex}");
+                        LogError(nameof(HookCallback), ex);
                     }
                 }
             }
 
 
-            
-            
+
             return CallNextHookEx(_lowLevelHookId, nCode, wParam, lParam);
         }
+
+
         private void RebuildMacroLookup()
         {
             _scanCodeMacroLookup.Clear();
@@ -508,7 +591,7 @@ namespace CouchKeys
             }
             catch (Exception ex)
             {
-                //Debug.WriteLine($"RawInput Error: {ex}");
+                LogError(nameof(ProcessRawInput), ex);
             }
         }
 
@@ -570,7 +653,7 @@ namespace CouchKeys
                             }
                             catch (Exception ex)
                             {
-                                //Debug.WriteLine($"Focus Async Task Error: {ex}");
+                                LogError("ExecuteMacro.FocusAsync", ex);
                             }
                         });
                         return;
@@ -616,12 +699,14 @@ namespace CouchKeys
             }
             catch (UnauthorizedAccessException ex)
             {
+                LogError(nameof(ExecuteMacro), ex);
                 string msgPerm = Application.Current.FindResource("MsgNoPermission") as string ?? "Keine Berechtigung zur Ausführung.";
                 string titleDenied = Application.Current.FindResource("TitleAccessDenied") as string ?? "Zugriff verweigert";
                 CustomMessageBox.Show(this, msgPerm, titleDenied, MessageBoxButton.OK);
             }
             catch (Exception ex)
             {
+                LogError(nameof(ExecuteMacro), ex);
                 string msgMacroErr = string.Format(Application.Current.FindResource("MsgMacroExecError") as string ?? "Fehler bei Makroausführung: {0}", ex.Message);
                 string titleError = Application.Current.FindResource("TitleError") as string ?? "Fehler";
                 CustomMessageBox.Show(this, msgMacroErr, titleError, MessageBoxButton.OK);
@@ -701,7 +786,10 @@ namespace CouchKeys
                                 return false; // Früher Abbruch
                             }
                         }
-                        catch { }
+                        catch (Exception ex)
+                        {
+                            LogError("ForceWindowFocusAsync.EnumWindows", ex);
+                        }
 
                         return true;
                     }, IntPtr.Zero);
@@ -718,9 +806,17 @@ namespace CouchKeys
                         ShowWindow(targetHwnd, SW_SHOW);
                     }
 
+                    // ✅ ROBUSTHEIT: try/finally verhindert, dass Alt "hängen bleibt",
+                    // falls SetForegroundWindow eine Exception wirft
                     keybd_event(VK_MENU, 0, 0, UIntPtr.Zero);
-                    SetForegroundWindow(targetHwnd);
-                    keybd_event(VK_MENU, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+                    try
+                    {
+                        SetForegroundWindow(targetHwnd);
+                    }
+                    finally
+                    {
+                        keybd_event(VK_MENU, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+                    }
                 }
             });
         }
@@ -776,6 +872,7 @@ namespace CouchKeys
                 }
                 catch (Exception ex)
                 {
+                    LogError(nameof(BtnImportMacros_Click), ex);
                     string msgImportErr = string.Format(Application.Current.FindResource("MsgImportError") as string ?? "Fehler beim Importieren der Datei: {0}", ex.Message);
                     string titleError = Application.Current.FindResource("TitleError") as string ?? "Fehler";
                     CustomMessageBox.Show(this, msgImportErr, titleError, MessageBoxButton.OK);
@@ -814,6 +911,7 @@ namespace CouchKeys
                 }
                 catch (Exception ex)
                 {
+                    LogError(nameof(BtnExportMacros_Click), ex);
                     string msgExportErr = string.Format(Application.Current.FindResource("MsgExportError") as string ?? "Fehler beim Exportieren: {0}", ex.Message);
                     string titleError = Application.Current.FindResource("TitleError") as string ?? "Fehler";
                     CustomMessageBox.Show(this, msgExportErr, titleError, MessageBoxButton.OK);
@@ -934,6 +1032,7 @@ namespace CouchKeys
             }
             catch (Exception ex)
             {
+                LogError(nameof(SaveCurrent), ex);
                 string msgSaveErr = string.Format(Application.Current.FindResource("MsgSaveError") as string ?? "Fehler beim Speichern: {0}", ex.Message);
                 string titleError = Application.Current.FindResource("TitleError") as string ?? "Fehler";
                 CustomMessageBox.Show(this, msgSaveErr, titleError, MessageBoxButton.OK);
@@ -964,7 +1063,7 @@ namespace CouchKeys
                 }
                 catch (Exception ex)
                 {
-                    //Debug.WriteLine($"Load error: {ex}");
+                    LogError(nameof(LoadMacros), ex);
                 }
             }
         }
@@ -987,7 +1086,7 @@ namespace CouchKeys
             }
             catch (Exception ex)
             {
-                //Debug.WriteLine($"Save file error: {ex}");
+                LogError(nameof(SaveMacrosToFile), ex);
             }
         }
 
@@ -1089,7 +1188,10 @@ namespace CouchKeys
                     }
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                LogError(nameof(IsWindowsInDarkMode), ex);
+            }
 
             return false;
         }
@@ -1267,8 +1369,9 @@ namespace CouchKeys
                     _isAutostartActive = (value != null);
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                LogError(nameof(CheckInitialAutostartStatus), ex);
                 _isAutostartActive = false;
             }
             UpdateAutostartIconVisual();
@@ -1276,18 +1379,23 @@ namespace CouchKeys
 
         private void BtnAutostartIcon_Click(object sender, RoutedEventArgs e)
         {
-            _isAutostartActive = !_isAutostartActive;
-            SetWindowsAutostart(_isAutostartActive);
+            bool newState = !_isAutostartActive;
+            if (SetWindowsAutostart(newState))
+            {
+                _isAutostartActive = newState;
+            }
             UpdateAutostartIconVisual();
         }
 
-        private void SetWindowsAutostart(bool enable)
+        // ✅ ROBUSTHEIT: Gibt jetzt zurück, ob die Änderung tatsächlich erfolgreich war,
+        // damit die UI nicht einen Zustand anzeigt, der nicht der Registry entspricht.
+        private bool SetWindowsAutostart(bool enable)
         {
             try
             {
                 using (var key = Registry.CurrentUser.OpenSubKey(AutostartRegistryKey, true))
                 {
-                    if (key == null) return;
+                    if (key == null) return false;
 
                     if (enable)
                     {
@@ -1302,13 +1410,15 @@ namespace CouchKeys
                         }
                     }
                 }
+                return true;
             }
             catch (Exception ex)
             {
-                //Debug.WriteLine($"Autostart error: {ex}");
+                LogError(nameof(SetWindowsAutostart), ex);
                 string msgAutoErr = string.Format(Application.Current.FindResource("MsgAutostartError") as string ?? "Fehler beim Ändern des Autostarts: {0}", ex.Message);
                 string titleError = Application.Current.FindResource("TitleError") as string ?? "Fehler";
                 CustomMessageBox.Show(this, msgAutoErr, titleError, MessageBoxButton.OK);
+                return false;
             }
         }
 

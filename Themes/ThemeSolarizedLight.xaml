@@ -11,4 +11,7 @@
 
     <!-- Passende Solarized Akzentfarbe (z. B. Cyan #2AA198 oder Orange #CB4B16) -->
     <SolidColorBrush x:Key="PrimaryBlue" Color="#2AA198"/>
+
+    <SolidColorBrush x:Key="SelectionOverlay" Color="#2AA198" Opacity="0.18"/>
+    
 </ResourceDictionary>

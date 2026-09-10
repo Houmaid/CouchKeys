@@ -110,9 +110,38 @@
                 <Setter Property="BorderThickness" Value="1"/>
             </Style>
 
+            <!-- Listenfeld-Eintrag (ListBoxItem) -->
             <Style TargetType="ListBoxItem">
                 <Setter Property="Foreground" Value="{DynamicResource TextPrimary}"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Padding" Value="4"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBoxItem">
+                            <Border x:Name="Bd"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4"
+                        Margin="0,2"
+                        Padding="{TemplateBinding Padding}">
+                                <ContentPresenter TextElement.Foreground="{TemplateBinding Foreground}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bd" Property="Background" Value="{DynamicResource BorderColor}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource RowHighlightForeground}"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectionOverlay}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource RowHighlightForeground}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
+
+
 
             <!-- ToolTips -->
             <Style TargetType="ToolTip">

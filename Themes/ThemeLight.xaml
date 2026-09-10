@@ -8,5 +8,7 @@
     <!-- Moderner, harmonischer Blau-Ton für den Light Mode -->
     <SolidColorBrush x:Key="PrimaryBlue" Color="#2563EB"/>
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#FFFFFF"/>
-    
+
+    <SolidColorBrush x:Key="SelectionOverlay" Color="#2563EB" Opacity="0.3"/>
+
 </ResourceDictionary>

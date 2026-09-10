@@ -22,6 +22,7 @@ namespace CouchKeys
 
         public int VkCode { get; set; }
         public string? DeviceName { get; set; }
+
         public string Name
         {
             get => _name;
@@ -37,8 +38,16 @@ namespace CouchKeys
         public Key? TriggerKey
         {
             get => _triggerKey;
-            set { _triggerKey = value ?? Key.None; OnPropertyChanged(); }
+            set
+            {
+                _triggerKey = value ?? Key.None;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(TriggerKeyDisplay)); // Aktualisiert die Anzeige automatisch
+            }
         }
+
+        // Neue Property für die fehlerfreie Bindung im XAML
+        public string TriggerKeyDisplay => $"Taste: {TriggerKey}";
 
         public int ScanCode
         {

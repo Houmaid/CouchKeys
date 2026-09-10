@@ -17,4 +17,6 @@
     <SolidColorBrush x:Key="InputBackground" Color="{x:Static SystemColors.WindowColor}"/>
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="{x:Static SystemColors.HighlightTextColor}"/>
 
+    <SolidColorBrush x:Key="SelectionOverlay" Color="{x:Static SystemColors.HighlightColor}" Opacity="0.18"/>
+
 </ResourceDictionary>
